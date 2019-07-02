@@ -25,14 +25,15 @@ environment variable `PORT`: `PORT=3000 npm start`.
 Returns data from a swagger file at the given url.
 
 Body:
-```json
+
+```
 {
     url: <swagger file url>
 }
 ```
 
 Response: 
-```json 
+```
 {
     data: <data from the swagger file>
     error: <error, if any>
