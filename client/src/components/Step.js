@@ -61,10 +61,10 @@ class Step extends React.Component {
 	}
 	
 	renderCode() {
-		if (!this.props.s_code) return;
+		if (!this.props.code) return;
 		return (
 			<div className="step-code">
-				<CodeView language={this.props.s_language} code={this.props.s_code} />
+				<CodeView language={this.props.language} code={this.props.code} />
 			</div>
 		);
 	}

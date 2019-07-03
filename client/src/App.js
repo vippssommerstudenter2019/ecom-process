@@ -26,7 +26,7 @@ class App extends React.Component {
   fetchData() {
     const data = {
       url: "https://raw.githubusercontent.com/vippsas/vipps-ecom-api/master/docs/swagger.yaml"
-    }
+    };
 
     const options = {
       method: "POST",
@@ -38,28 +38,32 @@ class App extends React.Component {
 
     fetch("/swaggerdata/get", options)
       .then(response => response.json())
-      .then(response => this.setState({swaggerResponse: response}));
+      .then(response => this.setState({swaggerResponse: response}))
+	  .then(response => console.log(JSON.stringify(response)));
 	  //response.data.fetchAuthorizationTokenUsingPost.code.python
+	  
   }
   
   contentFromSection(section) {
 	  const language = this.state.activeLanguage;
-	  const codeData = this.state.swaggerResponse;;
+	  const swagger = this.state.swaggerResponse;
 	  
 	  const id = section.id;
 	  const title = section.title;
 	  const description = section.description;
 	  //const imagelink = section.imagelink;
     
-		console.log(JSON.stringify(codeData));
+		console.log(JSON.stringify(swagger));
 		
-	  if (false && id in codeData) {
-		  const code = codeData["data"][id]["code"][language];
+	  if (JSON.stringify(swagger).indexOf(id) >= 0) {
+		  const code = swagger["data"][id]["code"][language];
+		  console.log(id, "Has Code");
 		  return (
 		  
-			<Step key={id} scrollId={id} title={title} description={description} s_language={language} s_code={code} />
+			<Step key={id} scrollId={id} title={title} description={description} language={language} code={code} />
 		  );
 	  } else {
+		  console.log(id, "Has -NO- Code");
 		  return (
 			<Step key={id} scrollId={id} title={title} description={description} />
 		  );
