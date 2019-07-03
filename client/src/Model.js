@@ -1,4 +1,4 @@
-const data = [
+const Sections = [
     {
         "id": "initiatePaymentV3UsingPOST",
         "title" : "Kunden velger betal med vipps",
@@ -49,4 +49,4 @@ const data = [
     }
 ];
 
-export default data;
+export { Sections };
