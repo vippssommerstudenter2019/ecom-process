@@ -48,3 +48,5 @@ const data = [
         "img": ""
     }
 ];
+
+export default data;
