@@ -1,8 +1,9 @@
 import React, {Container}from 'react';
 import CodeView from "./CodeView"
+import React, {Component} from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
+import CodeView from "./CodeView"
 
 
 /*
