@@ -4,10 +4,9 @@ import "../vipps-styles.css";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Default } from './CodeStyle';
 
-// Code map is a map of language as keys and the code as the value for the respective
-// languages
 const propTypes = {
-  codeMap: PropTypes.object.isRequired,
+  language: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired
 };
 
 class CodeView extends React.Component {
