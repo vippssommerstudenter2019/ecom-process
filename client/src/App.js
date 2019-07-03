@@ -5,7 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 //import SideBar from "./components/SideBar";
 import Step from "./components/Step";
-import {data as sections} from "./Model";
+import {sections} from "./Model";
 
 class App extends React.Component {
 
@@ -15,12 +15,13 @@ class App extends React.Component {
     this.state = {
 	  activeLanguage: "python",
 	  swaggerResponse: {},
-	  sections: sections,
+	  sections: data,
     };
   }
 
   componentDidMount() {
     this.fetchData();
+	console.log(this.state.sections);
   }
 
   fetchData() {
@@ -42,12 +43,12 @@ class App extends React.Component {
 	  //response.data.fetchAuthorizationTokenUsingPost.code.python
   }
   
-  contenFromSection(section, id) {
+  contentFromSection(section, id) {
 	  const language = this.state.activeLanguage;
 	  const swagger = this.state.swaggerResponse;
 	  
-	  const title = section.title;
-	  const description = section.description;
+	  const title = "Title"; //section.title;
+	  const description = "Desctription"; //section.description;
 	  //const imagelink = section.imagelink;
 	  
 	  const code = "Hello World!";
