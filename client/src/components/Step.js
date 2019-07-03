@@ -16,8 +16,8 @@ class Step extends React.Component {
 			title		->	the Title of the step
 			description	->	the Description of the step
 			scrollId	->	the scroll ref-id
-			language	->	the language of the displayed code
-		*	code	 	->	the actual code, .. in the correct language
+		*	s_language	->	the language of the displayed code
+		*	s_code	 	->	the actual code, .. in the correct language
 		*	image		->	a relevant image
 		*	imageIsLeft ->	the position of the image
 			
@@ -61,8 +61,12 @@ class Step extends React.Component {
 	}
 	
 	renderCode() {
-		if (this.props.code) return;
-		return <CodeView className="step-code" language={this.props.language} code={this.props.code} />
+		if (!this.props.s_code) return;
+		return (
+			<div className="step-code">
+				<CodeView language={this.props.s_language} code={this.props.s_code} />
+			</div>
+		);
 	}
 	
 	render() {

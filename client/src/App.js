@@ -21,7 +21,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchData();
-	console.log(this.state.sections);
   }
 
   fetchData() {
@@ -45,22 +44,24 @@ class App extends React.Component {
   
   contentFromSection(section) {
 	  const language = this.state.activeLanguage;
-	  const swagger = this.state.swaggerResponse;
+	  const codeData = this.state.swaggerResponse;;
 	  
 	  const id = section.id;
 	  const title = section.title;
 	  const description = section.description;
 	  //const imagelink = section.imagelink;
     
-    let code = swagger[id]["code"][language];
-    
-	  if (code) {
+		console.log(JSON.stringify(codeData));
+		
+	  if (false && id in codeData) {
+		  const code = codeData["data"][id]["code"][language];
 		  return (
-			<Step scrollId={id} title={title} description={description} language={language} code={code} />
+		  
+			<Step key={id} scrollId={id} title={title} description={description} s_language={language} s_code={code} />
 		  );
 	  } else {
 		  return (
-			<Step scrollId={id} title={title} description={description} />
+			<Step key={id} scrollId={id} title={title} description={description} />
 		  );
 	  }
   }
@@ -83,9 +84,11 @@ class App extends React.Component {
 
 	// <SideBar elements={this.state.elements} num="1" />
     return (
-      <StickyContainer className="App">
+	<div className="App">
+      <StickyContainer>
 		{this.renderContent()}
       </StickyContainer>
+	</div>
     );
   }
 }

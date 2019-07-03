@@ -10,14 +10,6 @@ const propTypes = {
 };
 
 class CodeView extends React.Component {
-
-  /**
-   * Sets the props for the current language.
-   */
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
