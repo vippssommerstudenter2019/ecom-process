@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import { PropTypes } from 'prop-types';
-import "../vipps-styles.css";
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import "../App.css";
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
-import { Default } from './CodeStyle';
+import { Controlled as CodeMirror } from 'react-codemirror2';
+//import { Default } from './CodeStyle';
 import 'codemirror/mode/python/python';
+import 'codemirror/mode/javascript/javascript';
+
 
 const propTypes = {
   language: PropTypes.string.isRequired,
@@ -22,7 +24,9 @@ class CodeView extends Component {
 	};
 	
 	const onChange = (editor, data, value) => {};
-	 
+	
+	return <div className="CodeMirror"/>;
+	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">

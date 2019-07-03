@@ -49,10 +49,12 @@
 }
 .step-image-left {
 	grid-area: step-image-left;
+	justify-content: center;
 
 }
 .step-image-right {
 	grid-area: step-image-right;
+	justify-content: center;
 
 }
 
