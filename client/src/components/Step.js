@@ -70,10 +70,15 @@ class Step extends React.Component {
 			<div className="step-container" id={this.props.scrollId}>
 				{this.renderImage()}
 				<div className="step-title">
-					{this.props.title}
+					<a className="xlarge-font-size text-color-black"> 
+						{this.props.title}
+					</a>
 				</div>
+				
 				<div className="step-description">
-					{this.props.description}
+					<a className="default-font-size text-color-black">
+						{this.props.description}
+					</a>					
 				</div>
 				{this.renderCode()}
 			</div>
