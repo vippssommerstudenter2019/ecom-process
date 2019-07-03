@@ -1,7 +1,7 @@
-import React, {Container}from 'react';
+import React, {Component} from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
+import CodeView from "./CodeView"
 
 
 /*

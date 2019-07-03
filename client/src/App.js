@@ -3,9 +3,9 @@ import { StickyContainer, Sticky } from 'react-sticky';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import logo from './logo.svg';
 import './App.css';
-import CodeView from "./components/CodeView"
-import SideBar from "./components/SideBar"
-import Step from "./components/Step"
+//import SideBar from "./components/SideBar";
+import Step from "./components/Step";
+import {data as sections} from "./Model";
 
 class App extends React.Component {
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
 	  activeLanguage: "python",
 	  swaggerResponse: {},
-	  sections: [],
+	  sections: sections,
     };
   }
 
@@ -66,8 +66,8 @@ class App extends React.Component {
   renderContent() {
 	  const sections = this.state.sections.slice();
 	  
-	  items = [];
-	  Arrays.from(sections, (val, index) => {items.push(this.contentFromSection(val, index));});
+	  let items = [];
+	  Array.from(sections, (val, index) => {items.push(this.contentFromSection(val, index));});
 	  
 	  return (
 		<div className="app-contents">
