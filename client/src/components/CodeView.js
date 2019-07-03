@@ -13,22 +13,18 @@ const propTypes = {
 class CodeView extends React.Component {
 
   /**
-   * Sets the props and the state for the current language.
+   * Sets the props for the current language.
    */
   constructor(props) {
     super(props);
-
-    this.state = { currentLanguage: "python" };
   }
 
   render() {
-    console.log(this.props.codeMap[this.state.currentLanguage])
-
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="white-bg card padding-l">
-        <SyntaxHighlighter language={this.state.currentLanguage} style={Default}>
-          {this.props.codeMap[this.state.currentLanguage]}
+        <SyntaxHighlighter language={this.props.language} style={Default}>
+          {this.props.code}
         </SyntaxHighlighter>
       </div>
     );
