@@ -67,3 +67,7 @@
 		"step-image-right step-code  step-image-left";
 }
 
+.CodeMirror {
+	border: 1px solid #eee;
+	height: auto;
+}

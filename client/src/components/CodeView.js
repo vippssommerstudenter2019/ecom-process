@@ -1,24 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { PropTypes } from 'prop-types';
 import "../vipps-styles.css";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { Controlled as CodeMirror } from 'react-codemirror2';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/material.css';
 import { Default } from './CodeStyle';
+import 'codemirror/mode/python/python';
 
 const propTypes = {
   language: PropTypes.string.isRequired,
   code: PropTypes.string.isRequired
 };
 
-class CodeView extends React.Component {
+class CodeView extends Component {
   render() {
+	const options = {
+		mode: this.props.language,
+		theme: 'material',
+		lineNumbers: true,
+		lineWrapping: true,
+	};
+	
+	const onChange = (editor, data, value) => {};
+	 
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
-      <div className="white-bg card padding-l">
-        <SyntaxHighlighter language={this.props.language} style={Default}>
-          {this.props.code}
-        </SyntaxHighlighter>
-      </div>
+      <div className="small-font-size">
+        <CodeMirror value={this.props.code} options={options} onChange={onChange}/>
+	  </div>
     );
+	//<div className="white-bg card padding-m">
   }
 }
 
