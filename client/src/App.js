@@ -4,6 +4,7 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 import logo from './logo.svg';
 import './App.css';
 import CodeView from "./components/CodeView"
+import SideBar from "./components/SideBar"
 
 class App extends React.Component {
 
@@ -11,7 +12,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      data: {}
+      data: "",
+      elements: ["1", "2", "3", "4"]
     };
   }
 
@@ -34,16 +36,21 @@ class App extends React.Component {
 
     fetch("/swaggerdata/get", options)
       .then(response => response.json())
-      .then(response => this.setState({ data: response.data.fetchAuthorizationTokenUsingPost.code }));
+      .then(response => this.setState({data: response.data.fetchAuthorizationTokenUsingPost.code.python}));
   }
 
   render() {
+
     return (
       <div className="App">
-        <CodeView codeMap={this.state.data} />
+
+        <CodeView language="python" code={this.state.data} />
+        <SideBar elements={this.state.elements} num="1" />
       </div>
     );
   }
 }
+
+
 
 export default App;
