@@ -1,7 +1,7 @@
 @import url("vipps-styles.css");
 
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -35,7 +35,8 @@
 }
 
 .step-title	{ 
-	grid-area: step-title; 
+	grid-area: step-title;
+	text-align: center;
 
 }
 .step-description {
@@ -53,7 +54,7 @@
 .step-container {
 	display: grid;
 	padding: 50px 50px 10px 10px;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows: auto auto auto;
 	grid-template-areas:
 		"step-image-right step-title step-image-left"
