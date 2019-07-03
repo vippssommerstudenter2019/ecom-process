@@ -51,9 +51,9 @@ class App extends React.Component {
 	  const title = section.title;
 	  const description = section.description;
 	  //const imagelink = section.imagelink;
-	  
-	  const code = "Hello World!";
-	  
+    
+    let code = swagger[id]["code"][language];
+    
 	  if (code) {
 		  return (
 			<Step scrollId={id} title={title} description={description} language={language} code={code} />
