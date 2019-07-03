@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
 	  activeLanguage: "python",
 	  swaggerResponse: {},
-	  sections: data,
+	  sections: sections,
     };
   }
 
@@ -67,8 +67,8 @@ class App extends React.Component {
   renderContent() {
 	  const sections = this.state.sections.slice();
 	  
-	  let items = [];
-	  Array.from(sections, (val, index) => {items.push(this.contentFromSection(val, index));});
+	  items = [];
+	  Arrays.from(sections, (val, index) => {items.push(this.contentFromSection(val, index));});
 	  
 	  return (
 		<div className="app-contents">

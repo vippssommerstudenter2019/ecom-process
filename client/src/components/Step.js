@@ -1,3 +1,5 @@
+import React, {Container}from 'react';
+import CodeView from "./CodeView"
 import React, {Component} from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
@@ -10,7 +12,7 @@ ScrollLinking
 */
 
 
-class Step extends Component {
+class Step extends React.Component {
 	/*
 		Supportet / Needed Props:
 			title		->	the Title of the step
