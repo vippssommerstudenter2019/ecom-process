@@ -10,7 +10,7 @@ ScrollLinking
 */
 
 
-class Step extends Component {
+class Step extends React.Component {
 	/*
 		Supportet / Needed Props:
 			title		->	the Title of the step
