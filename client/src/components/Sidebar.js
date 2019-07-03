@@ -4,12 +4,16 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 
 
 class Sidebar extends Component {
-	return (
-		<li> 
-			<Link activeClass="active" to={this.props.num} spy={true} smooth={true} duration={500}> 
-				{status}
-			</Link> 
-		</li>
 	
-	);
+	render() {
+
+		
+		return (
+			<li>
+				<Link activeClass="active" to={this.props.num} spy={true} smooth={true} duration={500}>
+					{status}
+				</Link>
+			</li>
+		);
+	}
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import "../styles.css";
+import "../vipps-styles.css";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Default } from './CodeStyle';
 
@@ -22,6 +22,8 @@ class CodeView extends React.Component {
   }
 
   render() {
+    console.log(this.props.codeMap[this.state.currentLanguage])
+
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="white-bg card padding-l">
