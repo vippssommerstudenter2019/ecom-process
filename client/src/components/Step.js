@@ -17,8 +17,9 @@ class Step extends Component {
 			description	->	the Description of the step
 			scrollId	->	the scroll ref-id
 			language	->	the language of the displayed code
-			code		->	the actual code, .. in the correct language
-			image *		->	arelevant image
+		*	code	 	->	the actual code, .. in the correct language
+		*	image		->	a relevant image
+		*	imageIsLeft ->	the position of the image
 			
 		* optional
 		
@@ -26,8 +27,9 @@ class Step extends Component {
 			.step-container		->	The css-container/grid for the step layout
 			.step-title			->	The css-title grid-field tag
 			.step-description	->	The css-text  grid-field tag
-			.step-code			->	The css-code  grid-field tag
-			.step-image	**		->	The css-image grid-field tag
+		**	.step-code			->	The css-code  grid-field tag
+		**	.step-image-left	->	The css-left  grid-field tag
+		**	.step-image-right	->	The css-left  grid-field tag
 			
 		** should be made optional in css => 'auto' sized
 		
@@ -50,7 +52,17 @@ class Step extends Component {
 	*/
 	renderImage() {
 		if (!this.props.image) return;
-		return <img className="step-image" href={this.props.image} />;
+		const pos = (this.props.imageIsLeft)? "step-image-left" : "step-image-right";
+		return (
+			<div className={pos}>
+				<img href={this.props.image} />
+			</div>
+		);
+	}
+	
+	renderCode() {
+		if (this.props.code) return;
+		return <CodeView className="step-code" language={this.state.language} code={this.state.code} />
 	}
 	
 	render() {
@@ -63,7 +75,7 @@ class Step extends Component {
 				<div className="step-description">
 					{this.props.description}
 				</div>
-				<CodeView className="step-code" language={this.state.language} code={this.state.code} />
+				{this.renderCode()}
 			</div>
 		);
 	};
