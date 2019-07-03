@@ -5,7 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 //import SideBar from "./components/SideBar";
 import Step from "./components/Step";
-import {sections} from "./Model";
+import {Sections} from "./Model";
 
 class App extends React.Component {
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
 	  activeLanguage: "python",
 	  swaggerResponse: {},
-	  sections: sections,
+	  sections: Sections,
     };
   }
 
@@ -43,12 +43,13 @@ class App extends React.Component {
 	  //response.data.fetchAuthorizationTokenUsingPost.code.python
   }
   
-  contentFromSection(section, id) {
+  contentFromSection(section) {
 	  const language = this.state.activeLanguage;
 	  const swagger = this.state.swaggerResponse;
 	  
-	  const title = "Title"; //section.title;
-	  const description = "Desctription"; //section.description;
+	  const id = section.id;
+	  const title = section.title;
+	  const description = section.description;
 	  //const imagelink = section.imagelink;
 	  
 	  const code = "Hello World!";
@@ -67,8 +68,8 @@ class App extends React.Component {
   renderContent() {
 	  const sections = this.state.sections.slice();
 	  
-	  items = [];
-	  Arrays.from(sections, (val, index) => {items.push(this.contentFromSection(val, index));});
+	  let items = [];
+	  Array.from(sections, (val, index) => {items.push(this.contentFromSection(val));});
 	  
 	  return (
 		<div className="app-contents">
