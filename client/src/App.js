@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import CodeView from "./components/CodeView"
 import SideBar from "./components/SideBar"
+import Step from "./components/Step"
 
 class App extends React.Component {
 
@@ -12,8 +13,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      data: "",
-      elements: ["1", "2", "3", "4"]
+	  activeLanguage: "python",
+	  swaggerResponse: {},
+	  sections: [],
     };
   }
 
@@ -36,17 +38,52 @@ class App extends React.Component {
 
     fetch("/swaggerdata/get", options)
       .then(response => response.json())
-      .then(response => this.setState({data: response.data.fetchAuthorizationTokenUsingPost.code.python}));
+      .then(response => this.setState({swaggerResponse: response}));
+	  //response.data.fetchAuthorizationTokenUsingPost.code.python
+  }
+  
+  contenFromSection(section, id) {
+	  const language = this.state.activeLanguage;
+	  const swagger = this.state.swaggerResponse;
+	  
+	  const title = section.title;
+	  const description = section.description;
+	  //const imagelink = section.imagelink;
+	  
+	  const code = "Hello World!";
+	  
+	  if (code) {
+		  return (
+			<Step scrollId={id} title={title} description={description} language={language} code={code} />
+		  );
+	  } else {
+		  return (
+			<Step scrollId={id} title={title} description={description} />
+		  );
+	  }
+  }
+  
+  renderContent() {
+	  const sections = this.state.sections.slice();
+	  
+	  items = [];
+	  Arrays.from(sections, (val, index) => {items.push(this.contentFromSection(val, index));});
+	  
+	  return (
+		<div className="app-contents">
+			{items}
+		</div>
+	  );
   }
 
   render() {
 
-    return (
-      <div className="App">
 
-        <CodeView language="python" code={this.state.data} />
-        <SideBar elements={this.state.elements} num="1" />
-      </div>
+	// <SideBar elements={this.state.elements} num="1" />
+    return (
+      <StickyContainer className="App">
+		{this.renderContent()}
+      </StickyContainer>
     );
   }
 }

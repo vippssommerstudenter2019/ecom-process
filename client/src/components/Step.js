@@ -81,5 +81,6 @@ class Step extends Component {
 	};
 }
 
+export default Step;
 
 
