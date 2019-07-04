@@ -50,25 +50,49 @@
 }
 .step-image-left {
 	grid-area: step-image-left;
-	justify-content: center;
+	align-self: center;
+	justify-self: start;
 
 }
 .step-image-right {
 	grid-area: step-image-right;
-	justify-content: center;
+	align-self: center;
+	justify-self: end;
 
 }
 
-.step-container {
+.step-continue {
+	grid-area: "step-continue";
+	align-self: center;
+}
+
+.step-container, .step-code-container {
 	display: grid;
-	padding: 100px 100px 10px 10px;
-	grid-template-columns: 1fr 2fr 1fr;
-	grid-template-rows: auto auto auto;
-	grid-row-gap: 20px;
+	padding-top: 48px;
+	padding-bottom: 48px;
+	grid-row-gap: 32px;
+	grid-column-gap: 32px;
+	grid-template-columns: auto 60% auto;
+	
+}
+
+.step-container {
 	grid-template-areas:
-		"step-image-right step-title step-image-left"
+		"step-image-right step-continue step-image-left";
+}
+
+.step-code-container {
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+		". step-title ."
 		"step-image-right step-desc  step-image-left"
 		"step-image-right step-code  step-image-left";
+}
+
+.content-columns {
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 80%
 }
 
 .CodeMirror {

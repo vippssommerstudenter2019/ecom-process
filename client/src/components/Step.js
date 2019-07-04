@@ -63,7 +63,6 @@ class Step extends Component {
 	}
 	
 	renderCode() {
-		if (!this.props.code) return;
 		return (
 			<div className="step-code">
 				<CodeView language={this.props.language} code={this.props.code} />
@@ -88,14 +87,26 @@ class Step extends Component {
 	}
 	
 	render() {
-		return (
-			<div className="step-container" id={this.props.scrollId}>
-				{this.renderTitle()}
-				{this.renderImage()}
-				{this.renderDescription()}
-				{this.renderCode()}
-			</div>
-		);
+		if (this.props.code) {
+			return (
+				<div className="step-code-container" id={this.props.scrollId}>
+					{this.renderTitle()}
+					{this.renderDescription()}
+					{this.renderCode()}
+					{this.renderImage()}
+				</div>
+			);
+		} else {
+			return (
+				<div className="step-container" id={this.props.scrollId}>
+					<div className="step-continue">
+						{this.renderTitle()}
+						{this.renderDescription()}
+					</div>
+					{this.renderImage()}
+				</div>
+			);
+		}
 	};
 }
 

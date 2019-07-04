@@ -91,7 +91,7 @@ class Content extends React.Component {
         Array.from(sections, (val, index) => { items.push(this.contentFromSection(val, index)); });
 
         return (
-            <div className="app-contents">
+            <div className="content-columns">
                 {items}
             </div>
         );
