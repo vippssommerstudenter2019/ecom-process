@@ -1,5 +1,9 @@
+@import url("vipps-styles.css");
+@import url("../../node_modules/codemirror/lib/codemirror.css");
+@import url("../../node_modules/codemirror/theme/material.css");
+
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -30,4 +34,56 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.step-title	{ 
+	grid-area: step-title;
+
+}
+.step-description {
+	grid-area: step-desc;
+
+}
+.step-code {
+	grid-area: step-code;
+
+}
+.step-image-left {
+	grid-area: step-image-left;
+	justify-content: center;
+
+}
+.step-image-right {
+	grid-area: step-image-right;
+	justify-content: center;
+
+}
+
+.step-container {
+	display: grid;
+	padding: 100px 100px 10px 10px;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: auto auto auto;
+	grid-row-gap: 20px;
+	grid-template-areas:
+		"step-image-right step-title step-image-left"
+		"step-image-right step-desc  step-image-left"
+		"step-image-right step-code  step-image-left";
+}
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-family: monospace;
+  height: auto;
+  color: black;
+  direction: ltr;
+}
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
 }

@@ -1,49 +1,26 @@
-import React, {Container}from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import logo from './logo.svg';
+import React from 'react';
+import Content from "./components/Content"
+import { StickyContainer } from 'react-sticky';
 import './App.css';
-import CodeView from "./components/CodeView"
+import { Sections } from "./Model";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
 
   constructor(props) {
-    super(props);
+		super(props);
+	}
 
-    this.state = {
-      data: {}
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData() {
-    const data = {
-      url: "https://raw.githubusercontent.com/vippsas/vipps-ecom-api/master/docs/swagger.yaml"
-    }
-
-    const options = {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    };
-
-    fetch("/swaggerdata/get", options)
-      .then(response => response.json())
-      .then(response => this.setState({ data: response.data.fetchAuthorizationTokenUsingPost.code }));
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <CodeView codeMap={this.state.data} />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="App">
+				<StickyContainer>
+					<Content activeLanguage="python" url="https://raw.githubusercontent.com/vippsas/vipps-ecom-api/master/docs/swagger.yaml" sections={Sections}/>
+				</StickyContainer>
+				<Footer />
+			</div>
+		)	
+	}
 }
 
 export default App;

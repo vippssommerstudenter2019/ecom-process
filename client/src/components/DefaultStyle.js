@@ -9,7 +9,7 @@ export default {
         "wordSpacing": "normal",
         "wordBreak": "normal",
         "wordWrap": "normal",
-        "lineHeight": "1.5",
+        "lineHeight": "1.0",
         "MozTabSize": "4",
         "OTabSize": "4",
         "tabSize": "4",
@@ -28,7 +28,7 @@ export default {
         "wordSpacing": "normal",
         "wordBreak": "normal",
         "wordWrap": "normal",
-        "lineHeight": "1.5",
+        "lineHeight": "1.0",
         "MozTabSize": "4",
         "OTabSize": "4",
         "tabSize": "4",
@@ -36,9 +36,9 @@ export default {
         "MozHyphens": "none",
         "msHyphens": "none",
         "hyphens": "none",
-        "padding": "1em",
+        "padding": ".2em",
         "margin": ".5em 0",
-        "overflow": "auto"
+        "overflow": "scroll"
     },
     "pre[class*=\"language-\"]::-moz-selection": {
         "textShadow": "none",
