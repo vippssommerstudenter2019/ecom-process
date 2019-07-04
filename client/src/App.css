@@ -1,6 +1,7 @@
 @import url("vipps-styles.css");
 @import url("../node_modules/codemirror/lib/codemirror.css");
 @import url("../node_modules/codemirror/theme/xq-light.css");
+@import url("../node_modules/codemirror/theme/material.css");
 
 .App {
   text-align: left;
@@ -9,7 +10,7 @@
 .content-wrapper {
 	text-align: left;
 	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-columns: 1fr 4fr 1fr;
 	grid-template-areas:
 		". content-area .";
 }
@@ -18,41 +19,74 @@
 	grid-area: content-area;
 }
 
-.step-wrapper {
-	padding: 48px;
-	width: auto;
-	height: auto;
-}
-
-.step-title {
-	padding: 16px;
-	width: 100%;
-	height: auto;
-}
-
 .step-text {
-	padding: 16px;
-	width: 60%;
-	height: auto;
+	grid-area: step-text;
+	align-self: center;
 }
 
-.step-image {
-	padding: 16px;
-	width: 40%;
-	height: auto;
+.step-sub-text {
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
 
-.step-float-left {
-	float: left;
+.step-img-right {
+	grid-area: img-right;
+	align-self: center;
 }
 
-.step-float-right {
-	float: right;
+.step-img-left {
+	grid-area: img-left;
+	align-self: center;
 }
 
-.step-pad {
-	width: 100%;
-	height: 32px;
+.step-wrapper {
+	margin-top: 64px;
+	margin-bottom: 64px;
+	display: grid;
+	grid-template-columns: auto 60% auto;
+	grid-template-rows: auto;
+	grid-column-gap: 32px;
+	grid-template-areas:
+		"img-left step-text img-right";
+}
+
+.code-img-left {
+	grid-area: img-left;
+}
+
+.code-img-right {
+	grid-area: img-right;
+}
+
+.code-title {
+	grid-area: title;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.code-description {
+	grid-area: desc;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.code-code {
+	grid-area: code;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.code-wrapper {
+	margin-top: 64px;
+	margin-bottom: 64px;
+	display: grid;
+	grid-template-columns: auto 60% auto;
+	grid-template-rows: auto auto auto;
+	grid-column-gap: 32px;
+	grid-template-areas:
+		". title ."
+		"img-left desc img-right"
+		"img-left code img-right";
 }
 
 .CodeMirror {
