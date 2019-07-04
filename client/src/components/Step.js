@@ -19,7 +19,7 @@ class Step extends React.Component {
 		*	s_language	->	the language of the displayed code
 		*	s_code	 	->	the actual code, .. in the correct language
 		*	image		->	a relevant image
-		*	imageIsLeft ->	the position of the image
+		*	position 	->	the position of the image [ 'left' / 'right' ]
 			
 		* optional
 		
@@ -52,7 +52,7 @@ class Step extends React.Component {
 	*/
 	renderImage() {
 		if (!this.props.image) return;
-		const pos = (this.props.imageIsLeft)? "step-image-left" : "step-image-right";
+		const pos = (this.props.position === 'left')? "step-image-left" : "step-image-right";
 		return (
 			<div className={pos}>
 				<img href={this.props.image} />
