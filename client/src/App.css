@@ -1,4 +1,6 @@
 @import url("vipps-styles.css");
+@import url("../../node_modules/codemirror/lib/codemirror.css");
+@import url("../../node_modules/codemirror/theme/material.css");
 
 .App {
   text-align: left;

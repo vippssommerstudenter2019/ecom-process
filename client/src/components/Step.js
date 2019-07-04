@@ -69,21 +69,28 @@ class Step extends React.Component {
 		);
 	}
 	
+	renderTitle() {
+		return (
+			<div className="step-title xlarge-font-size text-color-black">
+				{this.props.title}
+			</div>
+		);
+	}
+	
+	renderDescription() {
+		return (
+			<div className="step-description default-font-size text-color-black">
+				{this.props.description}		
+			</div>
+		);
+	}
+	
 	render() {
 		return (
 			<div className="step-container" id={this.props.scrollId}>
+				{this.renderTitle()}
 				{this.renderImage()}
-				<div className="step-title">
-					<a className="xlarge-font-size text-color-black"> 
-						{this.props.title}
-					</a>
-				</div>
-				
-				<div className="step-description">
-					<a className="default-font-size text-color-black">
-						{this.props.description}
-					</a>					
-				</div>
+				{this.renderDescription()}
 				{this.renderCode()}
 			</div>
 		);
