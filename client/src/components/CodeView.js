@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { PropTypes } from 'prop-types';
 import "../App.css";
 import { Controlled as CodeMirror } from 'react-codemirror2';
-//import { Default } from './CodeStyle';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/javascript/javascript';
 
