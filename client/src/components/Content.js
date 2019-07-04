@@ -51,7 +51,7 @@ class Content extends React.Component {
         const title = section.title;
         const description = section.description;
         const imagelink = section.imagelink;
-		const position = (i % 2 === 0) 'left' : 'right';
+		const position = (i % 2 === 0) ?  'left' : 'right';
 
         if (JSON.stringify(swagger).indexOf(id) >= 0) {
             const code = swagger["data"][id]["code"][language];
