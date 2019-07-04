@@ -14,6 +14,8 @@ const propTypes = {
 
 class CodeView extends Component {
   render() {
+	
+	
 	const options = {
 		mode: this.props.language,
 		theme: 'material',
@@ -22,6 +24,11 @@ class CodeView extends Component {
 	};
 	
 	const onChange = (editor, data, value) => {};
+	
+	setTimeout(() => {
+		Array.from(document.getElementsByClassName('CodeMirror'), (el, _) => el.CodeMirror.refresh());
+	}, 1);
+	
 	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language

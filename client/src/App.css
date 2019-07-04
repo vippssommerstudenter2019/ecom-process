@@ -73,8 +73,16 @@
 
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
+  box-sizing: border-box;
+  border-radius: 20px;
   font-family: monospace;
   height: auto;
   color: black;
   direction: ltr;
+}
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
 }
