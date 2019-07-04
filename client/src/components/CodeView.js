@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { PropTypes } from 'prop-types';
 import "../App.css";
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 //import { Default } from './CodeStyle';
 import 'codemirror/mode/python/python';
@@ -24,8 +22,6 @@ class CodeView extends Component {
 	};
 	
 	const onChange = (editor, data, value) => {};
-	
-	return <div className="CodeMirror"/>;
 	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
