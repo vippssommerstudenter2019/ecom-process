@@ -55,14 +55,14 @@ class App extends React.Component {
 		
 	  if (JSON.stringify(swagger).indexOf(id) >= 0) {
 		  const code = swagger["data"][id]["code"][language];
-		  console.log("/////////// Has Code", id, "///////////");
+		  console.log("/////////// Has Code:", id, "///////////");
 		  console.log(code);
 		  return (
 		  
 			<Step key={id} scrollId={id} title={title} description={description} language={language} code={code} />
 		  );
 	  } else {
-		  console.log("/////////// Has -NO- Code", id, "///////////");
+		  console.log("/////////// Has -NO- Code:", id, "///////////");
 		  return (
 			<Step key={id} scrollId={id} title={title} description={description} />
 		  );

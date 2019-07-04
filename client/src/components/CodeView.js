@@ -25,8 +25,6 @@ class CodeView extends Component {
 	
 	const onChange = (editor, data, value) => {};
 	
-	return <div className="CodeMirror"/>;
-	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">
