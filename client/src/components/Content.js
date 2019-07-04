@@ -50,7 +50,7 @@ class Content extends React.Component {
         const id = section.id;
         const title = section.title;
         const description = section.description;
-        const imagelink = section.imagelink;
+        const imagelink = section.img;
     		const position = (i % 2 === 0) ?  'left' : 'right';
 
 
