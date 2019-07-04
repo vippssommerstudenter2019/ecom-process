@@ -2,6 +2,7 @@ import React from 'react';
 import Content from "./components/Content"
 import { StickyContainer } from 'react-sticky';
 import './App.css';
+import { Sections } from "./Model";
 
 class App extends React.Component {
 
@@ -13,7 +14,7 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<StickyContainer>
-					<Content url="https://raw.githubusercontent.com/vippsas/vipps-ecom-api/master/docs/swagger.yaml"/>
+					<Content activeLanguage="python" url="https://raw.githubusercontent.com/vippsas/vipps-ecom-api/master/docs/swagger.yaml" sections={Sections}/>
 				</StickyContainer>
 			</div>
 		);
