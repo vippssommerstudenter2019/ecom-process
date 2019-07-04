@@ -14,7 +14,7 @@ class Header extends React.Component {
             loop: false,
             autoplay: false,
             progressiveLoad: true,
-            path: `assets/animations/wink.json`,
+            path: `./assets/animations/wink.json`,
         });
 
         animation.onComplete = () => {
@@ -25,6 +25,7 @@ class Header extends React.Component {
             if (Math.random() >= 0.6) {
                 animation.play();
             }
+
         }, getAnimationTimeout());
     }
 
@@ -34,8 +35,8 @@ class Header extends React.Component {
                 className="sticky sticky-head"
                 data-sticky-on="small"
                 data-sticky
-                data-margin-top="0"
-            >
+                data-margin-top="0">
+
                 <div className="grid-container">
                     <div className="grid-x header fixed-height align-justify">
                         <div className="cell shrink align-self-middle">
@@ -44,6 +45,16 @@ class Header extends React.Component {
                                     <div id="vipps-logo" />
                                 </div>
                             </a>
+                        </div>
+                        <div class="cell  small-12  medium-auto  medium-text-right">
+                            <nav id="menu" class="show-for-medium">
+                                <ul class="menu  vertical  medium-horizontal">
+
+                                    <li class="menu__item  "><a href="/produkter-og-tjenester/">Produkter og tjenester</a></li>
+                                    <li class="menu__item  "><a href="/hjelp/">Hjelp</a></li>
+                                    <li class="menu__item  menu__item--login"><a href="/logg-inn/">Logg inn</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
