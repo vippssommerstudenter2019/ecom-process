@@ -37,7 +37,7 @@ class Step extends Component {
 		
 		return (
 			<div className="step-wrapper" id={this.props.scrollId}>
-				<div className={txt} vertical-align="center">
+				<div className={"step-text " + txtflt} vertical-align="center">
 					<div className={titleClass}>
 						{this.props.title}
 					</div>
@@ -46,10 +46,8 @@ class Step extends Component {
 						{this.props.description}
 					</div>
 				</div>
-				<div className={img} vertical-align="center">
-					<div className={"step-img" + img}>
-						<img src={this.props.imagelink} />
-					</div>
+				<div className={"step-image " + imgflt} vertical-align="center">
+					<img src={this.props.imagelink} />
 				</div>
 			</div>
 		);
@@ -63,32 +61,33 @@ class CodeStep extends Component {
 		const txtflt = "step-float-" + this.props.position;
 		
 		return (
-			return (
-				<div className="step-wrapper" id={this.props.scrollId}>
-					<div className="step-title">
-						<div className={"step-text " + txtflt}>
-							<div className={titleClass}>
-								{this.props.title}
-							</div>
+			<div className="step-wrapper" id={this.props.scrollId}>
+				<div className="step-title">
+					<div className={"step-text " + txtflt}>
+						<div className={titleClass}>
+							{this.props.title}
 						</div>
-					</div>
-					<div className="step-pad" />
-					<div className={txt}>
-						<div className={descriptionClass}>
-							{this.props.description}
-						</div>
-						<div className="step-pad" />
-						<CodeView language={this.props.language} code={this.props.code} />
-					</div>
-					<div className={"step-img" + img}>
-						<img src={this.props.imagelink} />
 					</div>
 				</div>
-			);
+				<div className="step-pad" />
+				<div className={"step-text " + txtflt}>
+					<div className={descriptionClass}>
+						{this.props.description}
+					</div>
+					<div className="step-pad" />
+					<CodeView language={this.props.language} code={this.props.code} />
+				</div>
+				<div className={"step-img " + imgflt}>
+					<img src={this.props.imagelink} />
+				</div>
+			</div>
 		);
 	}
 }
 
-//export default Step;
-export {Step, CodeStep};
+export {
+	Step, 
+	CodeStep,
+};
+//export default CodeStep;
 
