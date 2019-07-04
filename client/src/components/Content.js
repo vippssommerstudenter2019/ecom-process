@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Step from "./Step";
+import {Step, CodeStep} from "./Step";
 
 const propTypes = {
     activeLanguage: PropTypes.string.isRequired,
@@ -50,16 +50,15 @@ class Content extends React.Component {
         const id = section.id;
         const title = section.title;
         const description = section.description;
-        const imagelink = section.imagelink;
+        const imagelink = section.img;
     	const position = (i % 2 === 0) ?  'left' : 'right';
-
 
         if (JSON.stringify(swagger).indexOf(id) >= 0) {
             const code = swagger["data"][id]["code"][language];
             console.log("/////////// Has Code", id, "///////////");
             console.log(code);
             return (
-                <Step 
+                <CodeStep 
 					key={id} 
 					scrollId={id} 
 					title={title} 

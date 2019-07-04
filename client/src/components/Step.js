@@ -89,6 +89,6 @@ class CodeStep extends Component {
 	}
 }
 
-export default Step;
-//export {Step, CodeStep};
+//export default Step;
+export {Step, CodeStep};
 
