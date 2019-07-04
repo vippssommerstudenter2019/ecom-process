@@ -1,5 +1,4 @@
 import React from 'react';
-//import vippsSmile from '../assets/images/vipps-smile.svg';
 
 const Footer = () => (
     <footer className="footer">
