@@ -65,28 +65,28 @@ button.link.text-color-white:hover {
     font-family: 'Vipps';
     font-style: normal;
     font-weight: 500;
-    src: local("Vipps Text-Web"), local("Vipps Text-Web"), url(../fonts/VippsText-Regular-Web.woff2) format("woff2"), url(../fonts/VippsText-Regular-Web.woff) format("woff");
+    src: local("Vipps Text-Web"), local("Vipps Text-Web"), url(../public/assets/fonts/VippsText-Regular-Web.woff2) format("woff2"), url(../public/assets/fonts/VippsText-Regular-Web.woff) format("woff");
 }
 
 @font-face {
     font-family: 'Vipps';
     font-style: normal;
     font-weight: 300;
-    src: local("Vipps Text-Web Light"), local("Vipps Text-Web Light"), url(../fonts/VippsText-Light-Web.woff2) format("woff2"), url(../fonts/VippsText-Light-Web.woff) format("woff");
+    src: local("Vipps Text-Web Light"), local("Vipps Text-Web Light"), url(../public/assets/fonts/VippsText-Light-Web.woff2) format("woff2"), url(../public/assets/fonts/VippsText-Light-Web.woff) format("woff");
 }
 
 @font-face {
     font-family: 'Vipps';
     font-style: normal;
     font-weight: 700;
-    src: local("Vipps Text-Web Bold"), local("Vipps Text-Web Bold"), url(../fonts/VippsText-Bold-Web.woff2) format("woff2"), url(../fonts/VippsText-Bold-Web.woff) format("woff");
+    src: local("Vipps Text-Web Bold"), local("Vipps Text-Web Bold"), url(../public/assets/fonts/VippsText-Bold-Web.woff2) format("woff2"), url(../public/assets/fonts/VippsText-Bold-Web.woff) format("woff");
 }
 
 @font-face {
     font-family: 'VippsHeader';
     font-style: normal;
     font-weight: 400;
-    src: local("Vipps Display-Web"), local("Vipps Display-Web"), url(../fonts/VippsDisplay-Regular-Web.woff2) format("woff2"), url(../fonts/VippsDisplay-Regular-Web.woff) format("woff");
+    src: local("Vipps Display-Web"), local("Vipps Display-Web"), url(../public/assets/fonts/VippsDisplay-Regular-Web.woff2) format("woff2"), url(../public/assets/fonts/VippsDisplay-Regular-Web.woff) format("woff");
 }
 
 /* Font-size
@@ -6911,15 +6911,15 @@ table thead th.sort:after {
 }
 
 table thead th.sort.sort-asc:after {
-    content: url("../images/vipps-sort-down.svg");
+    content: url("../public/assets/images/vipps-sort-down.svg");
 }
 
 table thead th.sort.sort-desc:after {
-    content: url("../images/vipps-sort-up.svg");
+    content: url("../public/assets/images/vipps-sort-up.svg");
 }
 
 table thead th.sort.sort-none:after {
-    content: url("../images/vipps-sort-unselected.svg");
+    content: url("../public/assets/images/vipps-sort-unselected.svg");
 }
 
 table tbody tr {
@@ -7361,7 +7361,7 @@ ul {
 .footer .footer-list__link {
     color: #fff;
     padding-left: 2.25rem;
-    background-image: url("../images/vipps-arrow-right-white.svg");
+    background-image: url("../public/assets/images/vipps-arrow-right-white.svg");
     background-size: 1.125rem;
     background-position: 0;
     background-repeat: no-repeat;
@@ -10484,14 +10484,14 @@ button[aria-controls="menu"] {
     vertical-align: top;
     margin-bottom: 0;
     padding: 0.5625rem 1.6875rem 0.5625rem 0;
-    background-image: url("../media/extra-images/hamburger.svg");
+    background-image: url("../public/assets/images/hamburger.svg");
     background-position: center right;
     background-repeat: no-repeat;
     background-size: 1.125rem;
 }
 
 button[aria-controls="menu"][aria-expanded="true"] {
-    background-image: url("../media/extra-images/close-icon.svg");
+    background-image: url("../public/assets/images/close-icon.svg");
 }
 
 .radio-menu__item {
@@ -10555,7 +10555,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 .footer-list__link {
     color: #fff;
     padding-left: 2.25rem;
-    background-image: url("../media/extra-images/vipps-arrow-right-white.svg");
+    background-image: url("../public/assets/images/vipps-arrow-right-white.svg");
     background-size: 1.125rem;
     background-position: left center;
     background-repeat: no-repeat;
@@ -10576,7 +10576,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
     margin-bottom: 1.125rem;
     padding-left: 2.8125rem;
     display: block;
-    background-image: url("../media/extra-images/checkmark-white.svg");
+    background-image: url("../public/assets/images/checkmark-white.svg");
     background-size: 1.6875rem;
     background-position: left top;
     background-repeat: no-repeat;
@@ -10599,7 +10599,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 .navigation-list__link {
     padding-right: 3.375rem;
     display: block;
-    background-image: url("../media/extra-images/vipps-arrow-right.svg");
+    background-image: url("../public/assets/images/vipps-arrow-right.svg");
     background-size: 1.125rem;
     background-position: right 1.125rem center;
     background-repeat: no-repeat;
@@ -10612,13 +10612,13 @@ button[aria-controls="menu"][aria-expanded="true"] {
 .navigation-list__link:hover, .navigation-list__link:focus {
     color: #5e3dc2;
     background-position: right 0.5625rem center;
-    background-image: url("../media/extra-images/vipps-arrow-right-shiny.svg");
+    background-image: url("../public/assets/images/vipps-arrow-right-shiny.svg");
 }
 
 .navigation-list__link.active {
     color: #ff5b24;
     background-position: right 0.5625rem center;
-    background-image: url("../media/extra-images/vipps-arrow-right-orange.svg");
+    background-image: url("../public/assets/images/vipps-arrow-right-orange.svg");
 }
 
 .navigation-list__link--tight {
@@ -10630,7 +10630,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 .navigation-list__link[href$=".ai"], .navigation-list__link[href$=".svg"],
 .navigation-list__link[href$=".png"], .navigation-list__link[href$=".jpg"],
 .navigation-list__link[href$=".jpeg"] {
-    background-image: url("../media/extra-images/download.svg");
+    background-image: url("../public/assets/images/download.svg");
 }
 
 .navigation-list__link[href$=".pdf"]:hover, .navigation-list__link[href$=".pdf"]:focus,
@@ -10646,7 +10646,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 .navigation-list__link[href$=".jpeg"].active {
     color: #5e3dc2;
     background-position: right 1.125rem center;
-    background-image: url("../media/extra-images/download-shiny.svg");
+    background-image: url("../public/assets/images/download-shiny.svg");
 }
 
 .button-list__item {
@@ -10667,13 +10667,13 @@ button[aria-controls="menu"][aria-expanded="true"] {
 }
 
 .navigation-link--back {
-    background-image: url("../media/extra-images/vipps-arrow-left.svg");
+    background-image: url("../public/assets/images/vipps-arrow-left.svg");
     background-position: left center;
     padding-left: 1.6875rem;
 }
 
 .navigation-link--back:hover, .navigation-link--back:focus, .navigation-link--back:active {
-    background-image: url("../media/extra-images/vipps-arrow-left-shiny.svg");
+    background-image: url("../public/assets/images/vipps-arrow-left-shiny.svg");
 }
 
 @media screen and (max-width: 63.99875em) {
@@ -10750,14 +10750,14 @@ button[aria-controls="menu"][aria-expanded="true"] {
 
 .button.upload {
     padding-left: 1.6875rem;
-    background-image: url("../media/extra-images/upload.svg");
+    background-image: url("../public/assets/images/upload.svg");
     background-size: 1.125rem;
     background-position: left center;
     background-repeat: no-repeat;
 }
 
 .button.upload:hover, .button.upload:focus, .button.upload:active {
-    background-image: url("../media/extra-images/upload-shiny.svg");
+    background-image: url("../public/assets/images/upload-shiny.svg");
 }
 
 .arrow-button {
@@ -10789,7 +10789,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 }
 
 .arrow-button--open {
-    background-image: url("../media/extra-images/vipps-arrow-down-white.svg");
+    background-image: url("../public/assets/images/vipps-arrow-down-white.svg");
 }
 
 .arrow-button--open:hover, .arrow-button--open:focus, .arrow-button--open:active {
@@ -10797,7 +10797,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 }
 
 .arrow-button--exit {
-    background-image: url("../media/extra-images/close-icon-white.svg");
+    background-image: url("../public/assets/images/close-icon-white.svg");
 }
 
 .arrow-button--exit:hover, .arrow-button--exit:focus, .arrow-button--exit:active {
@@ -10807,7 +10807,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 
 .arrow-button--close {
     background-color: #fff;
-    background-image: url("../media/extra-images/close-icon.svg");
+    background-image: url("../public/assets/images/close-icon.svg");
 }
 
 .arrow-button--close:hover, .arrow-button--close:focus, .arrow-button--close:active {
@@ -10817,7 +10817,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 
 .arrow-button--active {
     background-color: #fff;
-    background-image: url("../media/extra-images/vipps-arrow-up.svg");
+    background-image: url("../public/assets/images/vipps-arrow-up.svg");
 }
 
 .arrow-button--active:hover, .arrow-button--active:focus, .arrow-button--active:active {
@@ -10825,7 +10825,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 }
 
 .arrow-button--previous {
-    background-image: url("../media/extra-images/vipps-arrow-left-white.svg");
+    background-image: url("../public/assets/images/vipps-arrow-left-white.svg");
 }
 
 .arrow-button--previous:hover, .arrow-button--previous:focus,
@@ -10834,7 +10834,7 @@ button[aria-controls="menu"][aria-expanded="true"] {
 }
 
 .arrow-button--next {
-    background-image: url("../media/extra-images/vipps-arrow-right-white.svg");
+    background-image: url("../public/assets/images/vipps-arrow-right-white.svg");
 }
 
 .arrow-button--next:hover, .arrow-button--next:focus, .arrow-button--next:active {
@@ -10972,7 +10972,7 @@ input:invalid[value]:focus {
     width: 1.125rem;
     height: 1.125rem;
     border: 2px solid #49367e;
-    background-image: url("../media/images/checkmark.svg") !important;
+    background-image: url("../public/assets/images/checkmark.svg") !important;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -11364,7 +11364,7 @@ input:invalid[value]:focus {
 @media print, screen and (min-width: 47.5em) {
     .help-header__title {
         padding-top: 140px;
-        background-image: url("../media/extra-images/falling-man.svg");
+        background-image: url("../public/assets/images/falling-man.svg");
         background-size: 160px;
         background-position: center top;
         background-repeat: no-repeat;
@@ -11425,7 +11425,7 @@ input:invalid[value]:focus {
         border-top: 1px solid #938fa8;
         display: block;
         padding: 1.125rem 3.375rem 1.125rem 0;
-        background-image: url("../media/extra-images/vipps-arrow-down.svg");
+        background-image: url("../public/assets/images/vipps-arrow-down.svg");
         background-size: 1.125rem;
         background-position: right 1.125rem center;
         background-repeat: no-repeat;
@@ -11441,7 +11441,7 @@ input:invalid[value]:focus {
 @media screen and (max-width: 47.49875em) {
     .help-article__linked-title.active {
         color: #ff5b24 !important;
-        background-image: url("../media/extra-images/vipps-arrow-up-orange.svg");
+        background-image: url("../public/assets/images/vipps-arrow-up-orange.svg");
     }
 }
 
@@ -11526,7 +11526,7 @@ input:invalid[value]:focus {
 
 .contact-confirmation__title {
     color: #ff5b24;
-    background-image: url("../media/extra-images/checkmark-green.svg");
+    background-image: url("../public/assets/images/checkmark-green.svg");
     background-size: 1.125rem;
     background-repeat: no-repeat;
     background-position: left center;
@@ -11583,11 +11583,11 @@ input:invalid[value]:focus {
     width: 27px;
     /* Hardcoded to 27px because of IE11 rounding */
     height: 27px;
-    background-image: url("../media/extra-images/plus.svg");
+    background-image: url("../public/assets/images/plus.svg");
 }
 
 .product-slide__status.active {
-    background-image: url("../media/extra-images/minus.svg");
+    background-image: url("../public/assets/images/minus.svg");
 }
 
 @media print, screen and (min-width: 64em) {
@@ -12008,7 +12008,7 @@ button.link.text-color-primary:hover {
     margin-right: auto;
     width: 100px;
     height: 100px;
-    background-image: url("../media/extra-images/spinner.svg");
+    background-image: url("../public/assets/images/spinner.svg");
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
