@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Element} from 'react-scroll'
-import CodeView from "./CodeView"
+import {Element} from 'react-scroll';
+import CodeView from "./CodeView";
+//import Img from "./ecom-steps/Step1.svg";
 
 
 /*
@@ -51,7 +52,7 @@ class Step extends Component {
 	*/
 	renderImage() {
 		//if (!this.props.imagelink) return;
-		const imglink = "./assets/guide-images/Step1.svg";//this.props.imagelink;
+		const imglink = this.props.imagelink;
 		console.log(imglink);
 		const pos = (this.props.position === 'left')? "step-image-left" : "step-image-right";
 		return (
