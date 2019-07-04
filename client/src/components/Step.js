@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import CodeView from "./CodeView"
+import {Element} from 'react-scroll';
+import CodeView from "./CodeView";
+//import Img from "./ecom-steps/Step1.svg";
 
 
 /*
@@ -10,7 +10,7 @@ ScrollLinking
 */
 
 
-class Step extends React.Component {
+class Step extends Component {
 	/*
 		Supportet / Needed Props:
 			title		->	the Title of the step
@@ -18,7 +18,7 @@ class Step extends React.Component {
 			scrollId	->	the scroll ref-id
 		*	s_language	->	the language of the displayed code
 		*	s_code	 	->	the actual code, .. in the correct language
-		*	image		->	a relevant image
+		*	imagelink	->	a relevant image
 		*	position 	->	the position of the image [ 'left' / 'right' ]
 			
 		* optional
@@ -51,17 +51,18 @@ class Step extends React.Component {
 		/..more../ Add inn some additional formatting to make it nice
 	*/
 	renderImage() {
-		if (!this.props.image) return;
+		//if (!this.props.imagelink) return;
+		const imglink = this.props.imagelink;
+		console.log(imglink);
 		const pos = (this.props.position === 'left')? "step-image-left" : "step-image-right";
 		return (
-			<div className={pos}>
-				<img href={this.props.image} />
+			<div className={pos} >
+				<img src={imglink} />
 			</div>
 		);
 	}
 	
 	renderCode() {
-		if (!this.props.code) return;
 		return (
 			<div className="step-code">
 				<CodeView language={this.props.language} code={this.props.code} />
@@ -86,14 +87,26 @@ class Step extends React.Component {
 	}
 	
 	render() {
-		return (
-			<div className="step-container" id={this.props.scrollId}>
-				{this.renderTitle()}
-				{this.renderImage()}
-				{this.renderDescription()}
-				{this.renderCode()}
-			</div>
-		);
+		if (this.props.code) {
+			return (
+				<div className="step-code-container" id={this.props.scrollId}>
+					{this.renderTitle()}
+					{this.renderDescription()}
+					{this.renderCode()}
+					{this.renderImage()}
+				</div>
+			);
+		} else {
+			return (
+				<div className="step-container" id={this.props.scrollId}>
+					<div className="step-continue">
+						{this.renderTitle()}
+						{this.renderDescription()}
+					</div>
+					{this.renderImage()}
+				</div>
+			);
+		}
 	};
 }
 
