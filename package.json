@@ -6,8 +6,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "codemirror": "^5.48.0",
-    "express": "^4.16.4",
-    "react-codemirror2": "^6.0.0"
+    "express": "^4.16.4"
   }
 }

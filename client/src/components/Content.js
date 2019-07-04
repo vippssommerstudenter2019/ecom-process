@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Step from "./Step";
-import { Sections } from "../Model";
 
 const propTypes = {
-  url: PropTypes.string.isRequired
+    activeLanguage: PropTypes.string.isRequired,
+    sections: PropTypes.object.isRequired,
+    url: PropTypes.string.isRequired
 };
 
 class Content extends React.Component {
@@ -13,9 +14,9 @@ class Content extends React.Component {
         super(props);
         
         this.state = {
-            activeLanguage: "python",
+            activeLanguage: this.props.activeLanguage,
             swaggerResponse: {},
-            sections: Sections,
+            sections: this.props.sections,
         };
 
     }
