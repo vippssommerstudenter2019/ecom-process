@@ -70,6 +70,9 @@
 }
 
 .CodeMirror {
-	border: 1px solid #eee;
-	height: auto;
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: auto;
+  color: black;
+  direction: ltr;
 }

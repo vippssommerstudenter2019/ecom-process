@@ -52,18 +52,17 @@ class App extends React.Component {
 	  const title = section.title;
 	  const description = section.description;
 	  //const imagelink = section.imagelink;
-    
-		console.log(JSON.stringify(swagger));
 		
 	  if (JSON.stringify(swagger).indexOf(id) >= 0) {
 		  const code = swagger["data"][id]["code"][language];
-		  console.log(id, "Has Code");
+		  console.log("/////////// Has Code", id, "///////////");
+		  console.log(code);
 		  return (
 		  
 			<Step key={id} scrollId={id} title={title} description={description} language={language} code={code} />
 		  );
 	  } else {
-		  console.log(id, "Has -NO- Code");
+		  console.log("/////////// Has -NO- Code", id, "///////////");
 		  return (
 			<Step key={id} scrollId={id} title={title} description={description} />
 		  );
