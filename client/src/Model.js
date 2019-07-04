@@ -1,12 +1,12 @@
 const Sections = [
     {
-        "id": "initiatePaymentV3UsingPOST",
+        "id": "fetchAuthorizationTokenUsingPost",
         "title" : "Kunden velger betal med vipps",
         "description": "En kunde ønsker å kjøpe noe i nettbutikken og har valgt “betal med Vipps”. For at dette skal være mulig må nettbutikken ha en gyldig token. Nettbutikken må be om ny token fra Vipps hvert døgn.",
         "img" : "../assets/ecom-steps/Step1.svg"
    },
    {
-       "id": "vippsOvertake",
+       "id": "initiatePaymentV3UsingPOST",
        "title" : "Nettbutikken overlater betalingen til Vipps",
        "description": "For at Vipps skal kunne ta seg av betalingen trenger nettbutikken bare å sende pris og id på varen, ikke hvem som skal betale.",
        "img": "../assets/ecom-steps/Step2.svg"
