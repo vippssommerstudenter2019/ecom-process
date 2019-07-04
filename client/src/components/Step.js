@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import {Element} from 'react-scroll'
 import CodeView from "./CodeView"
 
 
@@ -10,7 +9,7 @@ ScrollLinking
 */
 
 
-class Step extends React.Component {
+class Step extends Component {
 	/*
 		Supportet / Needed Props:
 			title		->	the Title of the step
@@ -18,7 +17,7 @@ class Step extends React.Component {
 			scrollId	->	the scroll ref-id
 		*	s_language	->	the language of the displayed code
 		*	s_code	 	->	the actual code, .. in the correct language
-		*	image		->	a relevant image
+		*	imagelink	->	a relevant image
 		*	position 	->	the position of the image [ 'left' / 'right' ]
 			
 		* optional
@@ -51,11 +50,13 @@ class Step extends React.Component {
 		/..more../ Add inn some additional formatting to make it nice
 	*/
 	renderImage() {
-		if (!this.props.image) return;
+		//if (!this.props.imagelink) return;
+		const imglink = "./assets/guide-images/Step1.svg";//this.props.imagelink;
+		console.log(imglink);
 		const pos = (this.props.position === 'left')? "step-image-left" : "step-image-right";
 		return (
-			<div className={pos}>
-				<img href={this.props.image} />
+			<div className={pos} >
+				<img src={imglink} />
 			</div>
 		);
 	}
