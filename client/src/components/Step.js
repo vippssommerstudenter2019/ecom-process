@@ -9,6 +9,8 @@ Wrapper for future content: code + text + image
 ScrollLinking
 */
 
+const titleClass = "step-title xlarge-font-size text-color-black";
+const descriptionClass = "default-font-size text-color-black";
 
 class Step extends Component {
 	/*
@@ -22,99 +24,71 @@ class Step extends Component {
 		*	position 	->	the position of the image [ 'left' / 'right' ]
 			
 		* optional
-		
-		CSS class tags:
-			.step-container		->	The css-container/grid for the step layout
-			.step-title			->	The css-title grid-field tag
-			.step-description	->	The css-text  grid-field tag
-		**	.step-code			->	The css-code  grid-field tag
-		**	.step-image-left	->	The css-left  grid-field tag
-		**	.step-image-right	->	The css-left  grid-field tag
-			
-		** should be made optional in css => 'auto' sized
-		
-		Crude CSS proposal:
-			.step-title			{ grid-area: step-title; /..more../ }
-			.step-description	{ grid-area: step-desc;  /..more../ }
-			.step-code			{ grid-area: step-code;  /..more../ }
-			.step-image			{ grid-area: step-image; /..more../ }
-			.step-container {
-				display: grid;
-				grid-template-columns: 1fr 1fr auto;
-				grid-template-rows: auto auto;	***
-				grid-template-areas:
-					"step-title step-title step-image"
-					"step-desc step-code step-image";
-			}
-		
-		***A maybe too flexible proposal
-		/..more../ Add inn some additional formatting to make it nice
 	*/
-	renderImage() {
-		const imglink = this.props.imagelink;
-		return (<img src={imglink} />);
-	}
-	
-	renderCode() {
-		return (<CodeView language={this.props.language} code={this.props.code} />);
-	}
-	
-	renderTitle() {
-		return (
-			<div className="step-title xlarge-font-size text-color-black">
-				{this.props.title}
-			</div>
-		);
-	}
-	
-	renderDescription() {
-		return (
-			<div className="default-font-size text-color-black">
-				{this.props.description}		
-			</div>
-		);
-	}
 	
 	render() {
-		const flt = (this.props.position === 'left')? "right" : "left"
-		const txt = "step-text  step-float-" + this.props.position;
-		const img = "step-image step-float-" + flt;
-		if (this.props.code) {
+		const imgflt = "step-float-" +(this.props.position === 'left')? "right" : "left"
+		const txtflt = "step-float-" + this.props.position;
+
+		const img = this.props.imagelink;
+		const code = this.props.code;
+		const title = this.props.title;
+		const description = this.props.description;
+		
+		return (
+			<div className="step-wrapper" id={this.props.scrollId}>
+				<div className={txt} vertical-align="center">
+					<div className={titleClass}>
+						{this.props.title}
+					</div>
+					<div className="step-pad" />
+					<div className={descriptionClass}>
+						{this.props.description}
+					</div>
+				</div>
+				<div className={img} vertical-align="center">
+					<div className={"step-img" + img}>
+						<img src={this.props.imagelink} />
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
+
+class CodeStep extends Component {
+	
+	render() {
+		const imgflt = "step-float-" +(this.props.position === 'left')? "right" : "left"
+		const txtflt = "step-float-" + this.props.position;
+		
+		return (
 			return (
 				<div className="step-wrapper" id={this.props.scrollId}>
 					<div className="step-title">
-						<div className={txt}>
-							{this.renderTitle()}
+						<div className={"step-text " + txtflt}>
+							<div className={titleClass}>
+								{this.props.title}
+							</div>
 						</div>
 					</div>
 					<div className="step-pad" />
 					<div className={txt}>
-						{this.renderDescription()}
+						<div className={descriptionClass}>
+							{this.props.description}
+						</div>
 						<div className="step-pad" />
-						{this.renderCode()}
+						<CodeView language={this.props.language} code={this.props.code} />
 					</div>
-					<div className={img}>
-						{this.renderImage()}
+					<div className={"step-img" + img}>
+						<img src={this.props.imagelink} />
 					</div>
 				</div>
 			);
-		} else {
-			return (
-				<div className="step-wrapper" id={this.props.scrollId}>
-					<div className={txt} vertical-align="center">
-						{this.renderTitle()}
-						<div className="step-pad" />
-						{this.renderDescription()}
-					</div>
-					<div className={img} vertical-align="center">
-						{this.renderImage()}
-					</div>
-				</div>
-			);
-		}
-	};
+		);
+	}
 }
 
 export default Step;
-
+//export {Step, CodeStep};
 
