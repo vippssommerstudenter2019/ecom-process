@@ -51,23 +51,12 @@ class Step extends Component {
 		/..more../ Add inn some additional formatting to make it nice
 	*/
 	renderImage() {
-		//if (!this.props.imagelink) return;
 		const imglink = this.props.imagelink;
-		console.log(imglink);
-		const pos = (this.props.position === 'left')? "step-image-left" : "step-image-right";
-		return (
-			<div className={pos} >
-				<img src={imglink} />
-			</div>
-		);
+		return (<img src={imglink} />);
 	}
 	
 	renderCode() {
-		return (
-			<div className="step-code">
-				<CodeView language={this.props.language} code={this.props.code} />
-			</div>
-		);
+		return (<CodeView language={this.props.language} code={this.props.code} />);
 	}
 	
 	renderTitle() {
@@ -80,30 +69,46 @@ class Step extends Component {
 	
 	renderDescription() {
 		return (
-			<div className="step-description default-font-size text-color-black">
+			<div className="default-font-size text-color-black">
 				{this.props.description}		
 			</div>
 		);
 	}
 	
 	render() {
+		const flt = (this.props.position === 'left')? "right" : "left"
+		const txt = "step-text  step-float-" + this.props.position;
+		const img = "step-image step-float-" + flt;
 		if (this.props.code) {
 			return (
-				<div className="step-code-container" id={this.props.scrollId}>
-					{this.renderTitle()}
-					{this.renderDescription()}
-					{this.renderCode()}
-					{this.renderImage()}
+				<div className="step-wrapper" id={this.props.scrollId}>
+					<div className="step-title">
+						<div className={txt}>
+							{this.renderTitle()}
+						</div>
+					</div>
+					<div className="step-pad" />
+					<div className={txt}>
+						{this.renderDescription()}
+						<div className="step-pad" />
+						{this.renderCode()}
+					</div>
+					<div className={img}>
+						{this.renderImage()}
+					</div>
 				</div>
 			);
 		} else {
 			return (
-				<div className="step-container" id={this.props.scrollId}>
-					<div className="step-continue">
+				<div className="step-wrapper" id={this.props.scrollId}>
+					<div className={txt} vertical-align="center">
 						{this.renderTitle()}
+						<div className="step-pad" />
 						{this.renderDescription()}
 					</div>
-					{this.renderImage()}
+					<div className={img} vertical-align="center">
+						{this.renderImage()}
+					</div>
 				</div>
 			);
 		}
