@@ -45,6 +45,7 @@ class CodeView extends Component {
 			value={this.props.code} 
 			options={options}
 			onChange={onChange}
+			scrollbarStyle="null"
 		/>
 	  </div>
     );
