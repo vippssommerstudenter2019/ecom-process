@@ -53,9 +53,9 @@ class Header extends React.Component {
                     <div class="cell  small-12  medium-auto  medium-text-right align-self-middle">
                         <nav id="menu" class="show-for-medium">
                             <ul class="menu  vertical  medium-horizontal">
-                                <li class="menu__item  "><a href="/produkter-og-tjenester/">Produkter og tjenester</a></li>
-                                <li class="menu__item  "><a href="/hjelp/">Hjelp</a></li>
-                                <li class="menu__item  menu__item--login"><a href="/logg-inn/">Logg inn</a></li>
+                                <li class="menu__item  "><a href="https://www.vipps.no/produkter-og-tjenester/bedrift/">Products and services</a></li>
+                                <li class="menu__item  "><a href="https://www.vipps.no/hjelp/">Help</a></li>
+                                <li class="menu__item  menu__item--login"><a href="https://www.vipps.no/logg-inn/">Log in</a></li>
                             </ul>
                         </nav>
                     </div>
