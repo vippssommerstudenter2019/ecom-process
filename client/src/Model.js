@@ -1,51 +1,51 @@
 const Sections = [
     {
         "id": "fetchAuthorizationTokenUsingPost",
-        "title" : "Kunden velger betal med vipps",
-        "description": "En kunde ønsker å kjøpe noe i nettbutikken og har valgt “betal med Vipps”. For at dette skal være mulig må nettbutikken ha en gyldig token. Nettbutikken må be om ny token fra Vipps hvert døgn.",
+        "title" : "The customer wants to pay with Vipps",
+        "description": "A customer wants to buy something online and chooses Vipps as their payment method. For this to be possible, the merchant needs a valid token. The merchant needs to renew the token every 24 hours.",
         "img" : "../assets/ecom-steps/Step1.svg"
    },
    {
        "id": "initiatePaymentV3UsingPOST",
-       "title" : "Nettbutikken overlater betalingen til Vipps",
-       "description": "For at Vipps skal kunne ta seg av betalingen trenger nettbutikken bare å sende pris og id på varen, ikke hvem som skal betale.",
+       "title" : "Vipps handles the payment",
+       "description": "The merchant provides Vipps with price and ID for items that are being sold",
        "img": "../assets/ecom-steps/Step2.svg"
    },
    {
        "id": "customerApproval",
-       "title": "Kunde godtar i Vipps-appen",
-       "description": "Hvis kunden er på en enhet med Vipps-appen kan Vipps åpnes automagisk med app-switch. Hvis ikke sendes kunden videre på vanlig måte.",
+       "title": "Customer confirms in Vipps application",
+       "description": "For mobile and desktop browsers, integration is handled by Vipps using the Vipps landing page.\nIf customer is in an application using Vipps as a service, the Vipps app is triggered using app-switch.",
        "img": "../assets/ecom-steps/Step3.svg"
    },
    {
        "id": "cancelPaymentRequestUsingPUT",
-       "title": "Mulig kansellering",
-       "description": "Kansellering av transaksjon kan skje dersom kunde ikke godkjenner betalingen i appen.  Hvis det går mer enn 5-10 min uten at kunden gjør noe vil Vipps avbryte av sikkerhetsgrunner.",
+       "title": "Payment cancellation",
+       "description": "A reservation is cancelled if the user rejects the initiated payment in the Vipps app.\nAlso, due to safety reasons, a cancellation will be triggered if the user does not respond within 5 to 10 minutes.",
        "img": "../assets/ecom-steps/Step4.svg"
    },
    {
        "id": "transactionUpdateCallbackForRegularPaymentUsingPOST",
-       "title": "Vipps reserverer beløpet",
-       "description": "Dersom alt går som smurt, blir et beløp reservert på kundens konto. Det betyr at pengene fortsatt er på kundens konto, men kunden kan ikke bruke dem på noe annet siden de er lovet bort til nettbutikken. Ifølge norsk lov har man ikke lov å ta betalt for en vare eller tjeneste før den blir levert, derfor blir beløpet kun reservert i første omgang. Trygg betaling altså ;) Vipps sender bekreftelse til nettbutikken om at reservasjonen har blitt gjort.",
+       "title": "Vipps reserves the amount",
+       "description": "If everything goes smoothly, an amount is reserved in the customers bank account. This means that the money is on hold, and can not be used or withdrawn by the customer. According to norwegian law, the merchant cannot capture the money before the item or service is shipped or delivered to the customer. This is to secure a safe payment! A confirmation of the reservation is sent to the merchant.",
        "img": "../assets/ecom-steps/Step5.svg"
     },
     {
         "id": "merchantConfirm",
-        "title": "Nettbutikken bekrefter ordren til kunden og sender varen",
-        "description": "Når kunde mottar ordrebekreftelse har traksaksjonen blitt godtatt og bestillingen blir behandlet i nettbutikkens systemer. ",
+        "title": "Merchant confirms order and ships the item",
+        "description": "As the customer receives the order confirmation, the transaction is accepted and the order is processed in the merchant systems.",
         "img": "../assets/ecom-steps/Step6.svg"
     },
     {
         "id": "capturePaymentUsingPOST",
-        "title": "Beløpet trekkes fra kundens konto",
-        "description": "At beløp blir trukket kalles å gjøre et “capture”. Dette skjer når varen er sendt eller tjenesten blir levert. Nettbutikken sender en beskjed til Vipps om at bestillingen er ferdig behandlet og at de kan gjøre et capture på beløpet.",
+        "title": "7. The amount is withdrawn from the customers account",
+        "description": "When an item or service is shipped or delivered, the merchant notifies Vipps that the order is completed. This is when Vipps and the merchant can make a capture of the reserved amount.",
         "img": "../assets/ecom-steps/Step7.svg"
     },
     {
         "id": "refundPaymentUsingPOST",
-        "title": "Mulighet for refundering",
-        "description": "Noen ganger vil nettbutikken refundere beløpet kunden har betalt, for eksempel hvis varen sendes i retur. Nettbutikken ber Vipps refundere, og kunden vil motta beløpet etter noen dager.",
-        "img": "../assets/ecom-steps/Step7.svg"
+        "title": "8. Refunding the customer",
+        "description": "If the item is sent in return, the merchant wants to refund the captured amount. To initiate a refund, the merchant request Vipps to refund and the amount will be in the customers bank account after 2-3 working days.",
+        "img": "../assets/ecom-steps/Step8.svg"
     }
 ];
 
