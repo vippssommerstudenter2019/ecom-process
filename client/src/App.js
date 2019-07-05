@@ -19,8 +19,10 @@ class App extends React.Component {
 				<Header />
 				<StickyContainer>
 					<div className="content-wrapper">
-						<div className="content-area">
+						<div className="intro-area">
 							<IntroBox content={Intro} />
+						</div>
+						<div className="step-area">
 							<Content activeLanguage="python" url="https://raw.githubusercontent.com/vippsas/vipps-ecom-api/master/docs/swagger.yaml" sections={Sections} />
 						</div>
 					</div>

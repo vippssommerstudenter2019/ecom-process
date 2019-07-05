@@ -10,13 +10,19 @@
 .content-wrapper {
 	text-align: left;
 	display: grid;
-	grid-template-columns: auto 1200px auto;
+	grid-template-columns: auto 100px 1000px 100px auto;
+	grid-template-rows: auto auto;
 	grid-template-areas:
-		". content-area .";
+		". intro-area intro-area intro-area ."
+		". . step-area . .";
 }
 
-.content-area {
-	grid-area: content-area;
+.intro-area {
+	grid-area: intro-area;
+}
+
+.step-area {
+	grid-area: step-area;
 }
 
 
