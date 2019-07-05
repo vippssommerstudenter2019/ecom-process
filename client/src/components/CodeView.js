@@ -24,7 +24,7 @@ class CodeView extends Component {
 	
 	const options = {
 		mode: this.props.language,
-		theme: 'material',
+		theme: 'vipps',
 		lineNumbers: true,
 		lineWrapping: true,
 	};
@@ -40,6 +40,7 @@ class CodeView extends Component {
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">
+		<div className="CodeTop" />
         <CodeMirror 
 			editorDidMount={ed => ed.refresh()}
 			value={this.props.code} 

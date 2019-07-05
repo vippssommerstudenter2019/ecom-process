@@ -2,6 +2,7 @@
 @import url("../node_modules/codemirror/lib/codemirror.css");
 @import url("../node_modules/codemirror/theme/xq-light.css");
 @import url("../node_modules/codemirror/theme/material.css");
+@import url("code-theme.css");
 
 .App {
   text-align: left;
@@ -145,24 +146,4 @@
 		"img-left desc img-right"
 		"img-left code img-right"
 		"img-left . img-right";
-}
-
-.CodeMirror {
-  /* Set height, width, borders, and global font properties here */
-  padding: 5px;
-  box-sizing: border-box;
-  border-radius: 25px;
-  font-family: monospace;
-  height: auto;
-  color: black;
-  direction: ltr;
-  overflow: hidden;
-}
-
-.CodeMirror-scroll {
-	overflow: hidden;
-}
-
-.CodeMirror-rulers {
-	overflow: hidden;
 }
