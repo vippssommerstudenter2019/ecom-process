@@ -91,10 +91,8 @@ class Content extends React.Component {
         Array.from(sections, (val, index) => { items.push(this.contentFromSection(val, index)); });
 
         return (
-            <div className="content-wrapper">
-				<div className="content-area">
-					{items}
-				</div>
+            <div> 
+		        {items}
             </div>
         );
     }
