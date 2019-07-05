@@ -1,12 +1,11 @@
 import React from 'react';
-import vippsSmile from '../assets/images/vipps-smile.svg';
 
 const Footer = () => (
     <footer className="footer">
         <div className="grid-container">
             <div className="grid-x  grid-padding-x">
                 <div className="cell  small-11  small-offset-1  medium-1  medium-offset-0  large-1">
-                    <img className="footer__logo" src={vippsSmile} alt="" />
+                    <img className="footer__logo" src="./assets/images/vipps-smile.svg" alt="" />
                 </div>
                 <div className="cell  small-11  small-offset-1  medium-3  medium-offset-0  large-3">
                     <p className="footer__vision">Vipps AS - laget i Norge, med kjærlighet for forenkling.</p>
