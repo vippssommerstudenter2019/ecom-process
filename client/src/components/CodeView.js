@@ -35,6 +35,8 @@ class CodeView extends Component {
 	}, 1);
 	*/
 	
+	//vw [ViewWidth] / vh [ViewHeight] >> css scale params..
+	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">

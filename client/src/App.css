@@ -19,6 +19,14 @@
 	grid-area: content-area;
 }
 
+// Svg sizing
+.step-img-left,
+.step-img-right,
+.code-img-left,
+.code-img-right {
+	object-fit: cover;
+}
+
 .step-text {
 	grid-area: step-text;
 	align-self: center;
@@ -32,11 +40,13 @@
 .step-img-right {
 	grid-area: img-right;
 	align-self: center;
+	justify-self: start;
 }
 
 .step-img-left {
 	grid-area: img-left;
 	align-self: center;
+	justify-self: end;
 }
 
 .step-wrapper {
@@ -52,10 +62,14 @@
 
 .code-img-left {
 	grid-area: img-left;
+	align-self: start;
+	justify-self: end;
 }
 
 .code-img-right {
 	grid-area: img-right;
+	align-self: start;
+	justify-self: start; 
 }
 
 .code-title {
