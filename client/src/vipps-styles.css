@@ -1,6 +1,74 @@
 /** [AIV_SHORT]  Build version: 0.5.42 - Monday, July 1st, 2019, 2:07:38 PM  **/ 
- @charset "UTF-8";.text-color-primary{color:#ff5b24}.text-color-secondary{color:#49367e}.text-color-success{color:#3adb76}.text-color-warning{color:#ffae00}.text-color-alert{color:#de5059}.text-color-black{color:#161225}.text-color-dark-purple{color:#706b8b}.text-color-blueberry{color:#49367e}.text-color-storm-grey{color:#efeef3}.h2.text-color-white,.h3.text-color-white,.h4.text-color-white,.text-color-white,button.link.text-color-white,button.link.text-color-white:hover{color:#fff;text-underline-position:under;-webkit-text-decoration-color:#fff;text-decoration-color:#fff}.h2.text-color-orange,.h3.text-color-orange,.h4.text-color-orange,.text-color-orange{color:#ff5b24;text-underline-position:under;-webkit-text-decoration-color:#ff5b24;text-decoration-color:#ff5b24}@font-face{font-family:Vipps;font-style:normal;font-weight:500;src:local("Vipps Text-Web"),local("Vipps Text-Web"),url(/ca319f6e65640f3f5d3b45785223a94d.woff2) format("woff2"),url(/99ededad7624e82944d72a0d914aecab.woff) format("woff")}@font-face{font-family:Vipps;font-style:normal;font-weight:300;src:local("Vipps Text-Web Light"),local("Vipps Text-Web Light"),url(/3ba255a4394ade437f6286a16ace8d40.woff2) format("woff2"),url(/3bfb1217465f07612c387a93d82fe166.woff) format("woff")}@font-face{font-family:Vipps;font-style:normal;font-weight:700;src:local("Vipps Text-Web Bold"),local("Vipps Text-Web Bold"),url(/a2c657afbcf9eec3015d34cad953b5fa.woff2) format("woff2"),url(/22ac7574ca41bb83679bda5ed448e3b5.woff) format("woff")}@font-face{font-family:VippsHeader;font-style:normal;font-weight:400;src:local("Vipps Display-Web"),local("Vipps Display-Web"),url(/172867698929d98b8878b03227f236bb.woff2) format("woff2"),url(/74a03d55f3b55d919a6eb16ffa81985d.woff) format("woff")}
+ @charset "UTF-8";
+ .text-color-primary{color:#ff5b24}
+ .text-color-secondary{color:#49367e}
+ .text-color-success{color:#3adb76}
+ .text-color-warning{color:#ffae00}
+ .text-color-alert{color:#de5059}
+ .text-color-black{color:#161225}
+ .text-color-dark-purple{color:#706b8b}
+ .text-color-blueberry{color:#49367e}
+ .text-color-storm-grey{color:#efeef3}
+ .h2.text-color-white,
+ .h3.text-color-white,
+ .h4.text-color-white,
+ .text-color-white,
+ button.link.text-color-white,
+ button.link.text-color-white:hover{
+     color:#fff;
+     text-underline-position:under;
+     -webkit-text-decoration-color:#fff;
+     text-decoration-color:#fff
+}
+.h2.text-color-orange,
+.h3.text-color-orange,
+.h4.text-color-orange,
+.text-color-orange {
+    color:#ff5b24;
+    text-underline-position:under;
+    -webkit-text-decoration-color:#ff5b24;
+    text-decoration-color:#ff5b24
+}
 
+@font-face {
+    font-family:Vipps;
+    font-style:normal;
+    font-weight:500;
+    src:local("Vipps Text-Web"),
+    local("Vipps Text-Web"),
+    url(/assets/fonts/VippsText-Regular-Web.woff2) format("woff2"),
+    url(/.assets/fonts/VippsText-Regular-Web.woff) format("woff")
+}
+
+@font-face {
+    font-family:Vipps;
+    font-style:normal;
+    font-weight:300;
+    src:local("Vipps Text-Web Light"),
+    local("Vipps Text-Web Light"),
+    url(/assets/fonts/VippsText-Light-Web.woff2) format("woff2"),
+    url(/assets/fonts/VippsText-Light-Web.woff) format("woff")
+}
+
+@font-face {
+    font-family:Vipps;
+    font-style:normal;
+    font-weight:700;
+    src:local("Vipps Text-Web Bold"),
+    local("Vipps Text-Web Bold"),
+    url(/assets/fonts/VippsText-Bold-Web.woff2) format("woff2"),
+    url(/assets/fonts/VippsText-Bold-Web.woff) format("woff")
+}
+
+@font-face {
+    font-family:VippsHeader;
+    font-style:normal;
+    font-weight:400;
+    src:local("Vipps Display-Web"),
+    local("Vipps Display-Web"),
+    url(/assets/fonts/VippsDisplay-Regular-Web.woff2) format("woff2"),
+    url(/assets/fonts/VippsDisplay-Regular-Web.woff) format("woff")
+}
 
 .menu {
     padding: 0;
