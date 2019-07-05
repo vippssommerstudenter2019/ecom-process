@@ -24,7 +24,8 @@
 .step-img-right,
 .code-img-left,
 .code-img-right {
-	object-fit: cover;
+	object-fit: fill;
+	viewBox: 0vw 0vw .1vw .1vw;
 }
 
 .step-text {
@@ -41,12 +42,13 @@
 	grid-area: img-right;
 	align-self: center;
 	justify-self: start;
+	perserveAspectRatio: xMinyMid;// meet;
 }
 
 .step-img-left {
-	grid-area: img-left;
 	align-self: center;
 	justify-self: end;
+	perserveAspectRatio: xMaxyMid;// meet;
 }
 
 .step-wrapper {
@@ -64,12 +66,14 @@
 	grid-area: img-left;
 	align-self: start;
 	justify-self: end;
+	perserveAspectRatio: xMinyMin;// meet;
 }
 
 .code-img-right {
 	grid-area: img-right;
 	align-self: start;
 	justify-self: start; 
+	perserveAspectRatio: xMaxyMin;// meet;
 }
 
 .code-title {
@@ -100,7 +104,8 @@
 	grid-template-areas:
 		". title ."
 		"img-left desc img-right"
-		"img-left code img-right";
+		"img-left code img-right"
+		"img-left . img-right";
 }
 
 .CodeMirror {
