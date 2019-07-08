@@ -55,8 +55,6 @@ class Content extends React.Component {
 
         if (JSON.stringify(swagger).indexOf(id) >= 0) {
             const code = swagger["data"][id]["code"][language];
-            console.log("/////////// Has Code", id, "///////////");
-            console.log(code);
             return (
                 <CodeStep 
 					key={id} 
@@ -70,7 +68,6 @@ class Content extends React.Component {
 				/>
             );
         } else {
-            console.log("/////////// Has -NO- Code", id, "///////////");
             return (
                 <Step
 					key={id} 

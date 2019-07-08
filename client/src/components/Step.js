@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
-//import {Element} from 'react-scroll';
 import CodeView from "./CodeView";
-//import Img from "./ecom-steps/Step1.svg";
 
 
 /*
 Wrapper for future content: code + text + image
 ScrollLinking
 */
-
 const titleClass = "xlarge-font-size text-color-black";
 const descriptionClass = "default-font-size text-color-black";
 
@@ -85,5 +82,4 @@ export {
 	Step, 
 	CodeStep,
 };
-//export default CodeStep;
 

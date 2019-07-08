@@ -30,13 +30,6 @@ class CodeView extends Component {
 	};
 	const onChange = (editor, data, value) => {editor.SetState({value: value});};
 	
-	/*setTimeout(() => {
-		Array.from(document.getElementsByClassName('CodeMirror'), (el, _) => el.CodeMirror.refresh());
-	}, 1);
-	*/
-	
-	//vw [ViewWidth] / vh [ViewHeight] >> css scale params..
-	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">
@@ -50,7 +43,6 @@ class CodeView extends Component {
 		/>
 	  </div>
     );
-	//<div className="white-bg card padding-m">
   }
 }
 
