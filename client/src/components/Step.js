@@ -69,7 +69,12 @@ class CodeStep extends Component {
 				</div>
 				
 				<div className="code-code" >
-					<CodeView language={this.props.language} code={this.props.code} />
+					<CodeView 
+						languages={this.props.languages}
+						language={this.props.language} 
+						languagecallback={this.props.languagecallback}
+						code={this.props.code} 
+					/>
 				</div>
 				
 				<div className={imgflt}>

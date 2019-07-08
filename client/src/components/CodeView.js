@@ -4,6 +4,7 @@ import "../App.css";
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/javascript/javascript';
+import DropDownPicker from './DropDownPicker.js';
 
 
 const propTypes = {
@@ -35,12 +36,16 @@ class CodeView extends Component {
 	}, 1);
 	*/
 	
-	//vw [ViewWidth] / vh [ViewHeight] >> css scale params..
-	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">
-		<div className="CodeTop" />
+		<div className="CodeTop" >
+			<DropDownPicker 
+				choices={this.props.languages} 
+				selected={this.props.language} 
+				onClickCallback={this.props.languagecallback} 
+			/>
+		</div>
         <CodeMirror 
 			editorDidMount={ed => ed.refresh()}
 			value={this.props.code} 

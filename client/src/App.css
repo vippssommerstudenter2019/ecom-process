@@ -142,8 +142,63 @@
 .code-wrapper {
 	grid-template-rows: auto auto auto;
 	grid-template-areas:
-		". title ."
-		"img-left desc img-right"
-		"img-left code img-right"
-		"img-left . img-right";
+		". 			title	."
+		"img-left	desc	img-right"
+		"img-left	code	img-right"
+		"img-left	. 		img-right";
+}
+
+.dropdown {
+  margin-top: 10px;
+  margin-left: 10px;  
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  z-index: 10;
+}
+
+.dropdown-content div {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content div:hover {
+	background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-tilte-box {
+	background-color: #f9f9ff
+}
+
+.dropdown-icon:after {
+	display: inline-block;
+	content: '';
+	height: .7em;
+	width: .7em;
+	border-style: solid;
+	border-width: 0.3em 0.3em 0 0;
+	
+	margin-left: 0.7em;
+	
+	transform: rotate(-45deg);
+	vertical-align: middle;	
+}
+.dropdown-icon:after {
+    transform: rotate(-135deg);
+}
+
+.dropdown:hover .dropdown-icon:after {
+	transform: rotate(135deg);
 }

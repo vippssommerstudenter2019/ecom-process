@@ -7,6 +7,7 @@
  --vippspurple: #5E3DC2;
  --vippsred: #EB5858;
  --vippsrust: #9B3716;
+ --vippsorange: #FF00FF;
 }
 
 .cm-s-vipps span.cm-keyword { line-height: 1em; font-weight: bold; color: var(--vippsblue); }
@@ -23,7 +24,8 @@
 .cm-s-vipps span.cm-meta { color: var(--debug); }
 .cm-s-vipps span.cm-qualifier { color: var(--debug); }
 .cm-s-vipps span.cm-builtin { color: var(--vippspurple); }
-.cm-s-vipps span.cm-bracket { color: var(--vippsblack); }
+.cm-s-vipps span.cm-bracket { color: var(--vippsblack); background-color: var(--debug);}
+.cm-s-vipps span.cm-bracket {color: #f8f8f2;}
 .cm-s-vipps span.cm-tag { color: var(--debug); }
 .cm-s-vipps span.cm-attribute { color: var(--debug); }
 .cm-s-vipps span.cm-error { color: var(--debug); }
@@ -35,7 +37,7 @@
 	background-color: rgb(241, 239, 243);
 	border-radius: 25px 25px 0px 0px;
 	border: 2px solid rgb(219, 218, 223);
-	height: 30px;
+	height: 50px;
 	width: 100%;
 }
 
@@ -60,4 +62,9 @@
   background: rgb(239, 238, 243);
   color: rgb(83,127,126);
   padding: 5px;
+}
+
+.cm-s-vipps .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: var(--vippsorange) !important;
 }
