@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import "../App.css";
 import { Controlled as CodeMirror } from 'react-codemirror2';
@@ -7,8 +7,8 @@ import 'codemirror/mode/javascript/javascript';
 
 
 const propTypes = {
-  language: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired
+	language: PropTypes.string.isRequired,
+	code: PropTypes.string.isRequired
 };
 
 class CodeView extends Component {
@@ -17,35 +17,65 @@ class CodeView extends Component {
 		this.state = {
 			value: true,
 		};
-	}
-	
-  render() {
-	
-	
-	const options = {
-		mode: this.props.language,
-		theme: 'vipps',
-		lineNumbers: true,
-		lineWrapping: true,
-	};
-	const onChange = (editor, data, value) => {editor.SetState({value: value});};
-	
-    return (
-      // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
-      <div className="small-font-size">
-		<div className="CodeTop" />
-        <CodeMirror 
-			editorDidMount={ed => ed.refresh()}
-			value={this.props.code} 
-			options={options}
-			onChange={onChange}
-			scrollbarStyle="null"
-		/>
-	  </div>
-    );
-  }
-}
 
+		this.handleCopyClick = this.handleCopyClick.bind(this);
+	}
+
+	handleCopyClick() {
+		var textArea = document.createElement("textarea");
+		textArea.value = this.props.code;
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+
+		try {
+			var successful = document.execCommand('copy');
+			// var msg = successful ? 'Copied' : 'Couldn\'t copy';
+			// TODO: Implement overlay for successful copy when design is ready
+		} catch (err) {
+			console.error('Fallback: Oops, unable to copy', err);
+		}
+
+		document.body.removeChild(textArea);
+	}
+
+	render() {
+		const options = {
+			mode: this.props.language,
+			theme: 'vipps',
+			lineNumbers: true,
+			lineWrapping: true,
+		};
+		const onChange = (editor, data, value) => { editor.SetState({ value: value }); };
+
+		return (
+
+			// Use the default Vipps card and enrich it with the syntax highlighted code for the current language
+			<div className="small-font-size">
+				<div className="code-top">
+					<div className="code-top-right">
+						<button className="button tiny hollow" onClick={this.handleCopyClick}>Copy</button>
+					</div>
+				</div>
+					<CodeMirror
+						editorDidMount={ed => ed.refresh()}
+						value={this.props.code}
+						options={options}
+						onChange={onChange}
+						scrollbarStyle="null">
+					</CodeMirror>
+		</div>
+		);
+	}
+}
+/*
+<div class="container">
+  <img src="img_avatar.png" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Hello World</div>
+  </div>
+</div>
+*/
 CodeView.propTypes = propTypes;
 
 export default CodeView;
