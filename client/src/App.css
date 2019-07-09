@@ -1,3 +1,4 @@
+@import url("../node_modules/rc-tooltip/assets/bootstrap.css");
 @import url("vipps-styles.css");
 @import url("../node_modules/codemirror/lib/codemirror.css");
 @import url("../node_modules/codemirror/theme/xq-light.css");
@@ -58,11 +59,29 @@
 }
 
 .keyword-overlay {
-	max-width: 300px;
+	max-width: 400px;
 }
 
+.rc-tooltip {
+	opacity: 1;
+	z-index: 4;
+	border-radius: 100px 25px 25px 25px;
+}
 
-// Svg sizing
+.underlined-purple {
+	color: #49367e;
+	text-decoration: underline;
+}
+
+.rc-custom-link {
+	color: #FFF4EC;
+	text-decoration: underline;
+}
+
+.rc-custom-link, a:hover {
+    color: inherit; 
+}
+
 .step-img-left,
 .step-img-right,
 .code-img-left,
