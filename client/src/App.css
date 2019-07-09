@@ -148,57 +148,88 @@
 		"img-left	. 		img-right";
 }
 
+.dropdown, 
+.dropdown-content {
+	z-index: 10;
+	//min-width: 120px;
+	height: auto;
+}
+
 .dropdown {
-  margin-top: 10px;
-  margin-left: 10px;  
-  position: relative;
-  display: inline-block;
-  
+	display: inline-block;
+	justify-content: space-around;
+	position: relative;
+	margin: 5px;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 100px;
-  z-index: 10;
-}
-
-.dropdown-content div {
-  color: black;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content div:hover {
-	background-color: #f1f1f1
+	display: none;
+	position: absolute;
+	width: 100%;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
+	justify-content: space-around;
 }
 
-.dropdown:hover .dropdown-tilte-box {
-	background-color: #f9f9ff
+.dropdown-border {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-width: 2px; 
+	border-style: none;
+}
+
+.dropdown:hover .dropdown-border.top {
+	border-radius: 20px 20px 0px 0px;
+	border-top-style: solid;
+	padding-bottom: 5px;
+	margin-bottom: -5px;
+}
+
+.dropdown:hover .dropdown-border.bot {
+	border-radius: 0px 0px 20px 20px;
+	border-bottom-style: solid;
+}
+
+.dropdown:hover .dropdown-border {
+	background-color: #fbfbfb;
+	border-color: #e0e0e0;
+	border-left-style: solid;
+	border-right-style: solid;
+	justify-content: space-around;
+}
+
+.dropdown-border button {
+	display: block;
+	text-align: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100%;
+	border-style: solid;
+	border-width: small;
+	border-bottom-color: #f0f0f0;
 }
 
 .dropdown-icon:after {
+	float: right;
 	display: inline-block;
 	content: '';
-	height: .7em;
-	width: .7em;
+	height: .8em;
+	width: .8em;
 	border-style: solid;
 	border-width: 0.3em 0.3em 0 0;
 	
 	margin-left: 0.7em;
+	//margin-bottom: 0.5em;
+	margin-top: 0.25em;
 	
 	transform: rotate(-45deg);
-	vertical-align: middle;	
+	vertical-align: bot;	
 }
 .dropdown-icon:after {
     transform: rotate(-135deg);
 }
-
 .dropdown:hover .dropdown-icon:after {
 	transform: rotate(135deg);
 }
