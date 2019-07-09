@@ -4,7 +4,7 @@ import {Step, CodeStep} from "./Step";
 
 const propTypes = {
     activeLanguage: PropTypes.string.isRequired,
-    sections: PropTypes.object.isRequired,
+    sections: PropTypes.array.isRequired,
     url: PropTypes.string.isRequired
 };
 
