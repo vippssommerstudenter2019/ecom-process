@@ -1,17 +1,38 @@
 import React, { Component } from 'react';
 import CodeView from "./CodeView";
 import Tooltip from "rc-tooltip";
-import 'rc-tooltip/assets/bootstrap_white.css';
+import 'rc-tooltip/assets/bootstrap.css';
+
+export function titleCase(str) {
+	let splitStr = str.split(' ');
+
+	for (let i = 0; i < splitStr.length; i++) {
+		splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+	}
+
+	return splitStr.join(' ');
+}
 
 export function createToolTip(text, description) {
 	return (
 		<Tooltip
 			key={text}
 			overlay={
-				<div className="padding-s default-font-size keyword-overlay">{description}</div>
+				<div className="padding-s default-font-size keyword-overlay">
+					<div className="large-font-size">
+						<b>{titleCase(text)}</b>
+					</div>
+					<br/>
+					<div className="default-font-size">
+						{description}
+					</div>
+					<br/>
+					<br/>
+					<a className="rc-custom-link" href="https://www.vipps.no" target="_blank" rel="noopener noreferrer">See the API documentation for more info</a>
+				</div>
 			}
 			placement="bottom">
-			<a href="https://www.vipps.no" target="_blank" rel="noopener noreferrer"><u>{text}</u></a>
+			<button className="underlined-purple"><u>{text}</u></button>
 		</Tooltip>
 	);
 }
