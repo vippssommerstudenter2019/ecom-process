@@ -9,9 +9,6 @@ const propTypes = {
  * Represents a box with a short overview over the content.
  */
 class IntroBox extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
@@ -31,7 +28,7 @@ class IntroBox extends React.Component {
                     </div>
                 </div>
                 <div className="intro-image">
-                    <img src={this.props.content.imgPath} />
+                    <img src={this.props.content.imgPath} alt="Woman Using ecom"/>
                 </div>
             </div>
         );
