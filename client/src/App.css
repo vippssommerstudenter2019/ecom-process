@@ -177,18 +177,27 @@
 	padding-left: 5px;
 	padding-right: 5px;
 	border-width: 2px; 
-	border-style: none;
+	border-style: hidden;
 }
 
-.dropdown:hover .dropdown-border.top {
+.dropdown-border.top {
 	border-radius: 20px 20px 0px 0px;
-	border-top-style: solid;
 	padding-bottom: 5px;
 	margin-bottom: -5px;
 }
+.dropdown-border.bot {
+	border-radius: 0px 0px 20px 20px;
+}
+
+.dropdown:hover .dropdown-border.top {
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+}
 
 .dropdown:hover .dropdown-border.bot {
-	border-radius: 0px 0px 20px 20px;
+	border-left-style: solid;
+	border-right-style: solid;
 	border-bottom-style: solid;
 }
 

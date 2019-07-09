@@ -12,23 +12,28 @@ class Content extends React.Component {
 
     constructor(props) {
         super(props);
-        
+        let languages = ["python", "shell", "http", "javascript", "ruby", "java", "go"];
         this.state = {
-            activeLanguage: this.props.activeLanguage,
-			languages: ["python", "shell", "http", "javascript", "ruby", "java", "go"],
+            activeLanguage: languages[0],
+			languages: languages,
             swaggerResponse: {},
             sections: this.props.sections,
         };
-
+		
+		this.languageCallback = this.languageCallback.bind(this)
     }
 	
 	languageCallback(language) {
+		console.log("LangLog:1 ", language);
 		if (language === this.props.activeLanguage) return;
 		const languages = this.state.languages.slice();
-		for (let lang in languages) {
-			if (language === lang) {
-				this.SetState({activeLanguage: language});
-				return;
+		//console.log("LangLog:2 ", language);
+		for (let i in languages) {
+			//console.log(languages[i], language)
+			if (language === languages[i]) {
+				//console.log("LangLog:3 ", language);
+				this.setState({activeLanguage: language});
+				break;
 			}
 		}
 	}
@@ -58,7 +63,9 @@ class Content extends React.Component {
     contentFromSection(section, i) {
         const language  = this.state.activeLanguage;
 		const languages = this.state.languages.slice();
+		const langcall  = this.languageCallback;
         const swagger   = this.state.swaggerResponse;
+		//console.log("Content", langcall);
 
         const id = section.id;
         const title = section.title;
@@ -68,8 +75,8 @@ class Content extends React.Component {
 
         if (JSON.stringify(swagger).indexOf(id) >= 0) {
             const code = swagger["data"][id]["code"][language];
-            console.log("/////////// Has Code", id, "///////////");
-            console.log(code);
+            //console.log("/////////// Has Code", id, "///////////");
+            //console.log(code);
             return (
                 <CodeStep 
 					key={id} 
@@ -78,14 +85,14 @@ class Content extends React.Component {
 					description={description} 
 					language={language}
 					languages={languages}
-					languageCallback={this.languageCallback}
+					langcall={langcall}
 					code={code} 
 					imagelink={imagelink}
 					position={position}
 				/>
             );
         } else {
-            console.log("/////////// Has -NO- Code", id, "///////////");
+            //console.log("/////////// Has -NO- Code", id, "///////////");
             return (
                 <Step
 					key={id} 

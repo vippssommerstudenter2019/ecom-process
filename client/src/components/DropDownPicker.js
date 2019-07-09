@@ -3,16 +3,18 @@ import React, {Component} from 'react';
 class DropDownPicker extends Component {
 	/*
 		Props:
-			choices			 string[]
-			selected		 string
-			onClickCallback (string) => set_selected
+			choices	  string[]
+			selected  string
+			callback (string) => set_selected
 	*/
 	
 	render() {
 		const butt_str = "button tiny hollow";
 		const choices  = this.props.choices;
-		const callback = this.props.onClickCallback;
+		const callback = this.props.callback;
 		const selected = this.props.selected;
+		
+		//console.log("DDP", callback);
 		
 		let items = [];
 		Array.from(choices, (val, i) => {

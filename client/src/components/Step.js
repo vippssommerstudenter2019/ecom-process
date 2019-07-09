@@ -56,6 +56,8 @@ class CodeStep extends Component {
 	
 	render() {
 		const imgflt = "code-img-" + ((this.props.position === 'left')? "right" : "left");
+		const langcall = this.props.langcall;
+		//console.log("CodeStep", langcall);
 		
 		return (
 			<div className="code-wrapper" id={this.props.scrollId}>
@@ -72,7 +74,7 @@ class CodeStep extends Component {
 					<CodeView 
 						languages={this.props.languages}
 						language={this.props.language} 
-						languagecallback={this.props.languagecallback}
+						langcall={langcall}
 						code={this.props.code} 
 					/>
 				</div>

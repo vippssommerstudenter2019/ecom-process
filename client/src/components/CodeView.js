@@ -21,34 +21,33 @@ class CodeView extends Component {
 	}
 	
   render() {
+	const language  = this.props.language;
+	const languages = this.props.languages;
+	const langcall  = this.props.langcall;
+	//console.log("CodeView", langcall);
 	
-	
+	const code = this.props.code;
 	const options = {
-		mode: this.props.language,
+		mode: language,
 		theme: 'vipps',
 		lineNumbers: true,
 		lineWrapping: true,
 	};
-	const onChange = (editor, data, value) => {editor.SetState({value: value});};
-	
-	/*setTimeout(() => {
-		Array.from(document.getElementsByClassName('CodeMirror'), (el, _) => el.CodeMirror.refresh());
-	}, 1);
-	*/
+	const onChange = (editor, data, value) => {console.log(editor.options.mode);};
 	
     return (
       // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
       <div className="small-font-size">
 		<div className="CodeTop" >
 			<DropDownPicker 
-				choices={this.props.languages} 
-				selected={this.props.language} 
-				onClickCallback={this.props.languagecallback} 
+				choices={languages} 
+				selected={language} 
+				callback={langcall} 
 			/>
 		</div>
         <CodeMirror 
 			editorDidMount={ed => ed.refresh()}
-			value={this.props.code} 
+			value={code} 
 			options={options}
 			onChange={onChange}
 			scrollbarStyle="null"
