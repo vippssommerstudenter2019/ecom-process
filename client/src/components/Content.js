@@ -24,7 +24,7 @@ class Content extends React.Component {
     }
 	
 	languageCallback(language) {
-		console.log("LangLog:1 ", language);
+		//console.log("LangLog:1 ", language);
 		if (language === this.props.activeLanguage) return;
 		const languages = this.state.languages.slice();
 		//console.log("LangLog:2 ", language);

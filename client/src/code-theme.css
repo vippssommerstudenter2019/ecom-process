@@ -39,6 +39,7 @@
 	border: 2px solid rgb(219, 218, 223);
 	height: 50px;
 	width: 100%;
+	padding: 5px;
 }
 
 .cm-s-vipps.CodeMirror {

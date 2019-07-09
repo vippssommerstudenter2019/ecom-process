@@ -18,24 +18,28 @@ class DropDownPicker extends Component {
 		
 		let items = [];
 		Array.from(choices, (val, i) => {
+			if (val === selected) return val;
 			items.push(
 				<button key={val} className={butt_str} onClick={()=>callback(val)}> 
 						{val} 
 				</button>
 			);
+			return val;
 		});
 		//
 		return (
-			<div className="dropdown">
-				<div className="dropdown-border top">
-					<button className={"dropdown-icon " + butt_str}>
-						{selected}
-					</button>
-				</div>
-				
-				<div className="dropdown-content">
-					<div className="dropdown-border bot">
-						{items}
+			<div className="dropdown-wrapper">
+				<div className="dropdown">
+					<div className="dropdown-border top">
+						<button className={"dropdown-icon " + butt_str}>
+							{selected}
+						</button>
+					</div>
+					
+					<div className="dropdown-content">
+						<div className="dropdown-border bot">
+							{items}
+						</div>
 					</div>
 				</div>
 			</div>
