@@ -57,6 +57,10 @@
 	font-weight: bold;
 }
 
+.keyword-overlay {
+	max-width: 300px;
+}
+
 
 // Svg sizing
 .step-img-left,
