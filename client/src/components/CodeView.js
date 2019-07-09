@@ -5,7 +5,6 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/javascript/javascript';
 
-
 const propTypes = {
 	language: PropTypes.string.isRequired,
 	code: PropTypes.string.isRequired
@@ -29,7 +28,8 @@ class CodeView extends Component {
 		textArea.select();
 
 		try {
-			var successful = document.execCommand('copy');
+			document.execCommand("copy");
+			//var successful = document.execCommand('copy');
 			// var msg = successful ? 'Copied' : 'Couldn\'t copy';
 			// TODO: Implement overlay for successful copy when design is ready
 		} catch (err) {
@@ -68,14 +68,7 @@ class CodeView extends Component {
 		);
 	}
 }
-/*
-<div class="container">
-  <img src="img_avatar.png" alt="Avatar" class="image">
-  <div class="overlay">
-    <div class="text">Hello World</div>
-  </div>
-</div>
-*/
+
 CodeView.propTypes = propTypes;
 
 export default CodeView;
