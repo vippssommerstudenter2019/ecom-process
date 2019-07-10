@@ -24,8 +24,13 @@ class CodeView extends Component {
 
 	constructor(props) {
 		super(props);
-
+		
+		this.state = {
+			collapsed: true,
+		};
+		
 		this.handleCopyClick = this.handleCopyClick.bind(this);
+		this.handleExpand = this.handleExpand.bind(this);
 	}
 
 	/**
@@ -54,6 +59,10 @@ class CodeView extends Component {
 
 		document.body.removeChild(textArea);
 	}
+	
+	handleExpand() {
+		this.setState({collapsed: !this.state.collapsed});
+	}
 
 
 	render() {
@@ -75,6 +84,8 @@ class CodeView extends Component {
 			lineNumbers: true,
 			lineWrapping: true,
 		};
+		
+		const collapse = "codeview-collapse" + (this.state.collapsed? "" : " expanded");
 
 		return (
 			// Render a code mirror with an utility bar and style it according to Vipps style.
@@ -87,12 +98,19 @@ class CodeView extends Component {
 						<button onClick={this.handleCopyClick}>Copy</button>
 					</div>
 				</div>
-				<CodeMirror
-					editorDidMount={ed => ed.refresh()}
-					value={this.props.code}
-					options={options}
-					scrollbarStyle="null">
-				</CodeMirror>
+				<div className={collapse}>
+					<div className="codeview-collapse-content">
+						<CodeMirror
+							editorDidMount={ed => ed.refresh()}
+							value={this.props.code}
+							options={options}
+							scrollbarStyle="null">
+						</CodeMirror>
+					</div>
+					<button className="codeview-collapse-overlay" onClick={this.handleExpand}> 
+						{(this.state.collapsed? "Expand" : " Close")} 
+					</button>
+				</div>
 			</div>
 		);
 	}

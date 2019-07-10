@@ -13,6 +13,7 @@
  --vippsred: #EB5858;
  --vippsrust: #9B3716;
  --vippsorange: #F00F0F;
+ --vippseditorbg: #F6F6F9;
 }
 
 
@@ -44,13 +45,13 @@
 
 .react-codemirror2 {
   padding-bottom: 25px;
-  border-radius: 5px 5px 5px 5px;
-  background-color: #F6F6F9; 
+  //border-radius: 5px 5px 5px 5px;
+  background-color: var(--vippseditorbg); 
 }
 
 .cm-s-vipps.CodeMirror {
-  background-color: #F6F6F9;
-  border-radius: 0px 0px 5px 5px;
+  background-color: var(--vippseditorbg);
+  /*border-radius: 0px 0px 5px 5px;*/
   border: none;
   height: auto;
   overflow: hidden;
@@ -77,7 +78,7 @@
 }
 
 .cm-s-vipps.CodeMirror-gutters {
-  background: #F6F6F9;
+  background: var(--vippseditorbg);
   padding-left: 5px;
   padding-right: 5px;
   border-right-color: #00000000; 
@@ -89,7 +90,7 @@
  * The styling for the top bar of the codemirror view. Is where we choose language and can copy code.
  */
 .codeview-utility-bar {
-	background-color: #F6F6F9; 
+  background-color: var(--vippseditorbg); 
   border-radius: 5px 5px 0px 0px;
   height: 85px;
   width: 100%;
@@ -115,29 +116,88 @@
 }
 
 .codeview-utility-bar-left {
-	  display: inline-flex;
+	display: inline-flex;
     font-weight: lighter;
-	  flex-direction: row;
-	  justify-content: space-between;
-	  float: left;
-	  width: auto;
-	  height: 100%;
-	  padding: 5px;
-	}
+	flex-direction: row;
+	justify-content: space-between;
+	float: left;
+	width: auto;
+	height: 100%;
+	padding: 5px;
+}
   
 .codeview-utility-bar-left button {
     font-family: Vipps;
-		margin-left: 5px;
-		margin-right: 5px;
-		font-weight: normal;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-weight: normal;
     color: var(--vippsgray);
 }
 
 .codeview-utility-bar-left button.selected {
-		font-weight: bold;
-		color: var(--vippsblack);
+	font-weight: bold;
+	color: var(--vippsblack);
 }
 
+/*
+ * The collapse function that 'codemirror' is placed inside of.
+ */
+.codeview-collapse {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	//background-color: blue;
+}
+
+.codeview-collapse-content {
+	display: block;
+	overflow: hidden;
+	height: 150px;
+	transition: height 1.5s ease-in-out;
+	//background: red;
+}
+
+.codeview-collapse-overlay {
+	z-index: 3;
+	display: block;
+	margin-top: -150px;
+	height: 155px;
+	padding-top: 100px;
+	border-radius: 0px 0px 5px 5px;
+	
+	text-align: center;
+	line-height: 50px;
+	font-family: Vipps;
+	font-weight: lighter;
+	color: var(--vippsgray);
+	//content: 'Expand';
+	
+	background: linear-gradient(transparent, var(--vippseditorbg) 80%, var(--vippseditorbg));
+}
+
+.codeview-collapse-overlay:hover {
+	font-weight: bold;
+	color: var(--vippsblack);
+}
+
+.codeview-collapse.expanded {
+}
+
+.codeview-collapse.expanded .codeview-collapse-content{
+	height: auto;
+	overflow: auto;
+}
+
+.codeview-collapse.expanded .codeview-collapse-overlay {
+	//content: 'Close';
+	height: 100px;
+	margin-top: -50px;
+	padding-top: 50px;
+	line-height: 50px;
+	background: linear-gradient(transparent, var(--vippseditorbg) 50%, var(--vippseditorbg));
+}
 
 
 /**
