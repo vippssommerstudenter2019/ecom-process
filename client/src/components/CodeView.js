@@ -4,6 +4,12 @@ import "../App.css";
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/clike/clike';
+import 'codemirror/mode/go/go';
+import 'codemirror/mode/http/http';
+import 'codemirror/mode/shell/shell';
+import 'codemirror/mode/ruby/ruby';
+//import 'codemirror/mode/-lang-/-lang-'; To support other languages!!
 import DropDownPicker from './DropDownPicker.js';
 
 
@@ -11,6 +17,11 @@ const propTypes = {
   language: PropTypes.string.isRequired,
   code: PropTypes.string.isRequired
 };
+
+const langmap = {
+	"java"	: "text/x-java",
+	"go"	: "text/x-go",
+}
 
 class CodeView extends Component {
 	constructor(props) {
@@ -28,7 +39,7 @@ class CodeView extends Component {
 	
 	const code = this.props.code;
 	const options = {
-		mode: language,
+		mode: langmap[language] || language,
 		theme: 'vipps',
 		lineNumbers: true,
 		lineWrapping: true,

@@ -1,5 +1,7 @@
 @import url("vipps-styles.css");
 
+@import url("../node_modules/codemirror/lib/codemirror.css");
+
 :root {
  --debug: #FF00FF;
  --vippsblack: #161225;
@@ -7,11 +9,12 @@
  --vippspurple: #5E3DC2;
  --vippsred: #EB5858;
  --vippsrust: #9B3716;
- --vippsorange: #FF00FF;
+ --vippsorange: #F00F0F;
 }
 
+.cm-s-vipps span {color: var(--vippsblack);}
 .cm-s-vipps span.cm-keyword { line-height: 1em; font-weight: bold; color: var(--vippsblue); }
-.cm-s-vipps span.cm-atom { color: var(--debug); }
+.cm-s-vipps span.cm-atom { color: var(--vippspurple); }
 .cm-s-vipps span.cm-number { color: rgb(145, 207, 0); }
 .cm-s-vipps span.cm-def { text-decoration: underline; }
 .cm-s-vipps span.cm-variable { color: var(--vippsblack); }
@@ -26,7 +29,7 @@
 .cm-s-vipps span.cm-builtin { color: var(--vippspurple); }
 .cm-s-vipps span.cm-bracket { color: var(--vippsblack); background-color: var(--debug);}
 .cm-s-vipps span.cm-bracket {color: #f8f8f2;}
-.cm-s-vipps span.cm-tag { color: var(--debug); }
+.cm-s-vipps span.cm-tag { color: var(--vippspurple); }
 .cm-s-vipps span.cm-attribute { color: var(--debug); }
 .cm-s-vipps span.cm-error { color: var(--debug); }
 
