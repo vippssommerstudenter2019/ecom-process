@@ -36,7 +36,11 @@
 .cm-s-vipps .CodeMirror-activeline-background { background: rbg(252, 251, 254); }
 .cm-s-vipps .CodeMirror-matchingbracket { outline:1px solid grey; color: var(--vippsrust) !important;background: #FFFFFF; }
 
-.CodeTop {
+.code-background {
+  background-color: #ff00ff;
+}
+
+.code-top {
 	background-color: rgb(241, 239, 243);
 	border-radius: 25px 25px 0px 0px;
 	border: 2px solid rgb(219, 218, 223);
@@ -49,6 +53,54 @@
 	width: 130px;
 }
 
+.code-top-right {
+  padding-right: 5px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.code-top-left {
+  float: left; 
+}
+
+.overlay-container {
+  position: relative;
+  width: 100%;
+}
+/*
+
+Used for overlay over the code view when copied. Will be implemented when we get the design ready
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+	border-radius: 0px 0px 25px 25px;
+}
+
+.overlay-container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+*/
 .cm-s-vipps.CodeMirror {
   background-color: rgb(252, 251, 254);
   color: rgba(233, 237, 237, 1);
@@ -58,9 +110,9 @@
   height: auto;
   overflow: hidden;
   box-sizing: border-box;
-  //font-family: monospace;
   font-family: 'PT Mono' , monospace;
   direction: ltr;
+  width: 100%;
 }
 .cm-s-vipps.CodeMirror-scroll {
 	height: auto;

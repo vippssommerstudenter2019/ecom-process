@@ -4,7 +4,7 @@ import {Step, CodeStep} from "./Step";
 
 const propTypes = {
     activeLanguage: PropTypes.string.isRequired,
-    sections: PropTypes.object.isRequired,
+    sections: PropTypes.array.isRequired,
     url: PropTypes.string.isRequired
 };
 
@@ -71,12 +71,11 @@ class Content extends React.Component {
         const title = section.title;
         const description = section.description;
         const imagelink = section.img;
-    	const position = (i % 2 === 0) ?  'left' : 'right';
+        const position = (i % 2 === 0) ?  'left' : 'right';
+        const keywords = section.keywords;
 
         if (JSON.stringify(swagger).indexOf(id) >= 0) {
             const code = swagger["data"][id]["code"][language];
-            //console.log("/////////// Has Code", id, "///////////");
-            //console.log(code);
             return (
                 <CodeStep 
 					key={id} 
@@ -88,11 +87,11 @@ class Content extends React.Component {
 					langcall={langcall}
 					code={code} 
 					imagelink={imagelink}
-					position={position}
+                    position={position}
+                    keywords={keywords}
 				/>
             );
         } else {
-            //console.log("/////////// Has -NO- Code", id, "///////////");
             return (
                 <Step
 					key={id} 
@@ -101,6 +100,7 @@ class Content extends React.Component {
 					description={description} 
 					imagelink={imagelink}
 					position={position}
+                    keywords={keywords}
 				/>
             );
         }
@@ -110,7 +110,7 @@ class Content extends React.Component {
         const sections = this.state.sections.slice();
 
         let items = [];
-        Array.from(sections, (val, index) => { items.push(this.contentFromSection(val, index)); });
+        Array.from(sections, (val, index) => { return items.push(this.contentFromSection(val, index)); });
 
         return (
             <div> 

@@ -1,3 +1,4 @@
+@import url("../node_modules/rc-tooltip/assets/bootstrap.css");
 @import url("vipps-styles.css");
 @import url("code-theme.css");
 
@@ -54,8 +55,32 @@
 	font-weight: bold;
 }
 
+.keyword-overlay {
+	max-width: 400px;
+}
+
+.rc-tooltip {
+	opacity: 1;
+	z-index: 4;
+	border-radius: 100px 25px 25px 25px;
+}
+
+.underlined-purple {
+	color: #49367e;
+	text-decoration: underline;
+}
+
+.rc-custom-link {
+	color: #FFF4EC;
+	text-decoration: underline;
+}
+
+.rc-custom-link, a:hover {
+    color: inherit; 
+}
 
 // Svg sizing
+
 .step-img-left,
 .step-img-right,
 .code-img-left,

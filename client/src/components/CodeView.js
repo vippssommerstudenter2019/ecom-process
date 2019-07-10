@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import "../App.css";
 import { Controlled as CodeMirror } from 'react-codemirror2';
@@ -12,10 +12,9 @@ import 'codemirror/mode/ruby/ruby';
 //import 'codemirror/mode/-lang-/-lang-'; To support other languages!!
 import DropDownPicker from './DropDownPicker.js';
 
-
 const propTypes = {
-  language: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired
+	language: PropTypes.string.isRequired,
+	code: PropTypes.string.isRequired
 };
 
 const langmap = {
@@ -29,7 +28,29 @@ class CodeView extends Component {
 		this.state = {
 			value: true,
 		};
+
+		this.handleCopyClick = this.handleCopyClick.bind(this);
 	}
+
+	handleCopyClick() {
+		var textArea = document.createElement("textarea");
+		textArea.value = this.props.code;
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+
+		try {
+			document.execCommand("copy");
+			//var successful = document.execCommand('copy');
+			// var msg = successful ? 'Copied' : 'Couldn\'t copy';
+			// TODO: Implement overlay for successful copy when design is ready
+		} catch (err) {
+			console.error('Fallback: Oops, unable to copy', err);
+		}
+
+		document.body.removeChild(textArea);
+	}
+
 	
   render() {
 	const language  = this.props.language;
@@ -45,28 +66,29 @@ class CodeView extends Component {
 		lineWrapping: true,
 	};
 	const onChange = (editor, data, value) => {console.log(editor.options.mode);};
-	
-    return (
-      // Use the default Vipps card and enrich it with the syntax highlighted code for the current language
-      <div className="small-font-size">
-		<div className="CodeTop" >
-			<DropDownPicker 
-				choices={languages} 
-				selected={language} 
-				callback={langcall} 
-			/>
+
+		return (
+
+			// Use the default Vipps card and enrich it with the syntax highlighted code for the current language
+			<div className="small-font-size">
+				<div className="code-top">
+          <div className="code-top-left">
+            <DropDownPicker choices={languages} selected={language} callback={langcall} />
+				  </div>	
+          <div className="code-top-right">
+						<button className="button tiny hollow" onClick={this.handleCopyClick}>Copy</button>
+					</div>
+				</div>
+					<CodeMirror
+						editorDidMount={ed => ed.refresh()}
+						value={this.props.code}
+						options={options}
+						onChange={onChange}
+						scrollbarStyle="null">
+					</CodeMirror>
 		</div>
-        <CodeMirror 
-			editorDidMount={ed => ed.refresh()}
-			value={code} 
-			options={options}
-			onChange={onChange}
-			scrollbarStyle="null"
-		/>
-	  </div>
-    );
-	//<div className="white-bg card padding-m">
-  }
+		);
+	}
 }
 
 CodeView.propTypes = propTypes;

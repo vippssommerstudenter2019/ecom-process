@@ -8,11 +8,6 @@ import Footer from "./components/Footer";
 import IntroBox from "./components/IntroBox";
 
 class App extends React.Component {
-
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<div className="App">
