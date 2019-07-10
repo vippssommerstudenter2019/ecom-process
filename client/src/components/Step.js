@@ -109,7 +109,7 @@ class Step extends Component {
 				</div>
 
 				<div className={imgflt} vertical-align="center">
-					<img src={this.props.imagelink} />
+					<img src={this.props.imagelink} alt={this.props.title}/>
 				</div>
 
 			</div>
@@ -149,7 +149,7 @@ class CodeStep extends Component {
 				</div>
 
 				<div className={imgflt}>
-					<img src={this.props.imagelink} />
+					<img src={this.props.imagelink} alt={this.props.title}/>
 				</div>
 
 			</div>

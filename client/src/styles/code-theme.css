@@ -1,5 +1,5 @@
 @import url("vipps-styles.css");
-@import url("../node_modules/codemirror/lib/codemirror.css");
+@import url("../../node_modules/codemirror/lib/codemirror.css");
 
 /**
  * Predefined Vipps colours.
@@ -13,9 +13,15 @@
  --vippsred: #EB5858;
  --vippsrust: #9B3716;
  --vippsorange: #F00F0F;
- --vippseditorbg: #F6F6F9;
-}
 
+ --ghost: #C9C6D7;
+ --seashellPeach: #FFF4EC;
+ --gallery: #F0F0F0;
+ --athensGrey: #EFEEF3;
+ --athensGreyLight: #F6F6F9;
+ --manatee: #938FA8;
+ --rum: #706B8B;
+}
 
 /**
  * Custom style for code mirror view in the Vipps design language.
@@ -45,13 +51,14 @@
 
 .react-codemirror2 {
   padding-bottom: 25px;
-  //border-radius: 5px 5px 5px 5px;
-  background-color: var(--vippseditorbg); 
+  background-color: var(--athensGreyLight);
+  border-bottom: 1px solid var(--ghost);
+  border-left: 1px solid var(--ghost);
+  border-right: 1px solid var(--ghost);
 }
 
 .cm-s-vipps.CodeMirror {
-  background-color: var(--vippseditorbg);
-  /*border-radius: 0px 0px 5px 5px;*/
+  background-color: var(--athensGreyLight);
   border: none;
   height: auto;
   overflow: hidden;
@@ -61,28 +68,33 @@
   width: 100%;
 }
 
-.cm-s-vipps.CodeMirror-scroll {
+.cm-s-vipps .CodeMirror-scroll {
 	height: auto;
 }
 
-.cm-s-vipps.CodeMirror-lines {
+.cm-s-vipps .CodeMirror-lines {
   color: var(--vippsblack);
 }
 
-.cm-s-vipps.CodeMirror pre {
+.cm-s-vipps .CodeMirror pre {
   padding-left: 44px;
 }
 
-.cm-s-vipps.CodeMirror-linenumber {
+.cm-s-vipps .CodeMirror-linenumber {
   padding-left: 25px;
+  width: 10px !important;
 }
 
-.cm-s-vipps.CodeMirror-gutters {
-  background: var(--vippseditorbg);
+.cm-s-vipps .CodeMirror-gutters {
+  background: var(--athensGreyLight);
   padding-left: 5px;
   padding-right: 5px;
   border-right-color: #00000000; 
   border-bottom-color: #00000000; 
+}
+
+.cm-s-vipps.CodeMirror pre {
+  padding-left: 44px;
 }
 
 
@@ -90,10 +102,13 @@
  * The styling for the top bar of the codemirror view. Is where we choose language and can copy code.
  */
 .codeview-utility-bar {
-  background-color: var(--vippseditorbg); 
+	background-color: var(--athensGreyLight); 
   border-radius: 5px 5px 0px 0px;
   height: 85px;
   width: 100%;
+  border-top: 1px solid var(--ghost);
+  border-left: 1px solid var(--ghost);
+  border-right: 1px solid var(--ghost);
 }
 
 .codeview-utility-bar-right {
@@ -105,14 +120,30 @@
 .codeview-utility-bar-right button {
   font-family: Vipps;
   font-weight: lighter;
-	background-color:#EFEEF3;
-	color: #706B8B;
-	border: 0.8px solid #C9C6D7;
+	background-color:var(--athensGrey);
+	color: var(--rum);
+	border: 0.8px solid var(--ghost);
 	font-size: 13px;
 	line-height: 20px;
 	text-align: center;
 	border-radius: 40px;
 	padding: 4px 14px 4px 14px;
+}
+
+.codeview-utility-bar-right button:hover {
+    color: var(--manatee);
+}
+
+.codeview-utility-bar-right button.selected {
+    color: var(--rum);
+}
+
+.codeview-utility-bar-right button:focus {
+    outline: none;
+}
+
+.codeview-utility-bar-right button:active {
+    background-color: var(--athensGreyLight);
 }
 
 .codeview-utility-bar-left {
@@ -123,20 +154,30 @@
 	float: left;
 	width: auto;
 	height: 100%;
-	padding: 5px;
+	padding: 35px;
 }
   
 .codeview-utility-bar-left button {
-    font-family: Vipps;
+  font-family: Vipps;
 	margin-left: 5px;
 	margin-right: 5px;
-	font-weight: normal;
-    color: var(--vippsgray);
+	font-weight: lighter;
+  color: var(--manatee);
 }
 
 .codeview-utility-bar-left button.selected {
 	font-weight: bold;
 	color: var(--vippsblack);
+}
+
+.codeview-utility-bar-left button.selected {
+		font-weight: lighter;
+    font-family: Vipps;
+    color: var(--rum);
+}
+
+.codeview-utility-bar-left button:focus {
+    outline: none;
 }
 
 /*
@@ -198,7 +239,6 @@
 	line-height: 50px;
 	background: linear-gradient(transparent, var(--vippseditorbg) 50%, var(--vippseditorbg));
 }
-
 
 /**
  * The overlay over the code view, not implemented yet.
