@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import IntroBox from "./components/IntroBox";
 
-class App extends React.Component {
+class HowItWorks extends React.Component {
 	render() {
 		return (
 			<div className="App">
@@ -27,4 +27,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default HowItWorks;
