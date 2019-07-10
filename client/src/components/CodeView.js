@@ -35,14 +35,14 @@ const utilityBarLanguageMap = {
 /**
  * Generates a hash from a string.
  */
-String.prototype.hashCode = function () {
+export function getHashCodeFromString(string) {
 	
 	var hash = 0, i, chr;
 	
-	if (this.length === 0) return hash;
+	if (string.length === 0) return hash;
 
-	for (i = 0; i < this.length; i++) {
-		chr = this.charCodeAt(i);
+	for (i = 0; i < string.length; i++) {
+		chr = string.charCodeAt(i);
 		hash = ((hash << 5) - hash) + chr;
 		 // Convert to 32bit integer
 		hash |= 0;
@@ -83,7 +83,7 @@ class CodeView extends Component {
 			console.error('Fallback: Oops, unable to copy', err);
 		}
 
-		document.getElementById(this.props.code.hashCode()).removeChild(textArea);
+		document.getElementById(getHashCodeFromString(this.props.code)).removeChild(textArea);
 	}
 
 
@@ -117,7 +117,7 @@ class CodeView extends Component {
 			// We give the first div an id of an unique hash corresponding to the code so when
 			// we want to copy something out of it, the page won't scroll as we aren't adding
 			// a textarea to the body, but this component.
-			<div className="small-font-size" id={this.props.code.hashCode()}> 
+			<div className="small-font-size" id={getHashCodeFromString(this.props.code)}> 
 				<div className="codeview-utility-bar">
 					<div className="codeview-utility-bar-left">
 						{items}
