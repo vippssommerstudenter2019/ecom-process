@@ -58,6 +58,13 @@ class CodeView extends Component {
 	const langcall  = this.props.langcall;
 	//console.log("CodeView", langcall);
 	
+	let items = [];
+	Array.from(languages, (val, i) => {
+		if (val === language) items.push(<button className="selected"> {val} </button>);
+		else items.push(<button onClick={()=>langcall(val)}> {val} </button>);
+		return val;
+	});
+	
 	const code = this.props.code;
 	const options = {
 		mode: langmap[language] || language,
@@ -66,16 +73,16 @@ class CodeView extends Component {
 		lineWrapping: true,
 	};
 	const onChange = (editor, data, value) => {console.log(editor.options.mode);};
-
+		//<DropDownPicker choices={languages} selected={language} callback={langcall} />
 		return (
 
 			// Use the default Vipps card and enrich it with the syntax highlighted code for the current language
 			<div className="small-font-size">
 				<div className="code-top">
-          <div className="code-top-left">
-            <DropDownPicker choices={languages} selected={language} callback={langcall} />
-				  </div>	
-          <div className="code-top-right">
+					<div className="code-top-left">
+						{items}
+					</div>	
+					<div className="code-top-right">
 						<button className="button tiny hollow" onClick={this.handleCopyClick}>Copy</button>
 					</div>
 				</div>
