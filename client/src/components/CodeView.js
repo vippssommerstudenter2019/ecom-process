@@ -55,14 +55,11 @@ class CodeView extends Component {
 
 	constructor(props) {
 		super(props);
-<<<<<<< HEAD
 		
 		this.state = {
 			collapsed: true,
 		};
 		
-=======
->>>>>>> master
 		this.handleCopyClick = this.handleCopyClick.bind(this);
 		this.handleExpand = this.handleExpand.bind(this);
 	}
