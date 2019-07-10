@@ -15,9 +15,22 @@ const propTypes = {
 	code: PropTypes.string.isRequired
 };
 
-const langmap = {
+const codeMirrorLanguageMap = {
 	"java": "text/x-java",
 	"go": "text/x-go",
+}
+
+/**
+ * Used in utility bar to make the languages title case and upper case.
+ */
+const utilityBarLanguageMap = {
+	"java" : "Java",
+	"python" : "Python",
+	"go" : "Go",
+	"http" : "HTTP",
+	"shell" : "Shell",
+	"javascript" : "JavaScript",
+	"ruby" : "Ruby"
 }
 
 /**
@@ -82,14 +95,19 @@ class CodeView extends Component {
 
 		// Populate the utility bar with languages to choose
 		Array.from(this.props.languages, (val, i) => {
-			if (val === this.props.language) items.push(<button className="selected"> {val} </button>);
-			else items.push(<button onClick={() => this.props.langcall(val)}> {val} </button>);
+			if (val === this.props.language) {
+				items.push(<button className="selected"> {utilityBarLanguageMap[val]} </button>);
+			}
+			else {
+				items.push(<button onClick={() => this.props.langcall(val)}> {utilityBarLanguageMap[val]} </button>);
+			}
+
 			return val;
 		});
 
 		// Settings for code mirror
 		const options = {
-			mode: langmap[this.props.language] || this.props.language,
+			mode: codeMirrorLanguageMap[this.props.language] || this.props.language,
 			theme: 'vipps',
 			lineNumbers: true,
 			lineWrapping: true,
