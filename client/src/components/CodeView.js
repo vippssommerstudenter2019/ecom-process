@@ -20,11 +20,29 @@ const langmap = {
 	"go": "text/x-go",
 }
 
+/**
+ * Generates a hash from a string.
+ */
+String.prototype.hashCode = function () {
+	
+	var hash = 0, i, chr;
+	
+	if (this.length === 0) return hash;
+
+	for (i = 0; i < this.length; i++) {
+		chr = this.charCodeAt(i);
+		hash = ((hash << 5) - hash) + chr;
+		 // Convert to 32bit integer
+		hash |= 0;
+	}
+	return hash;
+};
+
+
 class CodeView extends Component {
 
 	constructor(props) {
 		super(props);
-
 		this.handleCopyClick = this.handleCopyClick.bind(this);
 	}
 
@@ -34,15 +52,16 @@ class CodeView extends Component {
 	handleCopyClick() {
 
 		// We create a fake text area and inject the code into it
-		var textArea = document.createElement("textarea");
+		let textArea = document.createElement("textarea");
 		textArea.value = this.props.code;
-		document.body.appendChild(textArea);
+
+		// Append the textarea under this code view.
+		document.getElementById(this.props.code.hashCode()).appendChild(textArea);
 		textArea.focus();
 		textArea.select();
 
 		// Try to copy from that text area
 		try {
-
 			document.execCommand("copy");
 
 			// TODO: Implement overlay for successful copy when design is ready
@@ -52,7 +71,7 @@ class CodeView extends Component {
 			console.error('Fallback: Oops, unable to copy', err);
 		}
 
-		document.body.removeChild(textArea);
+		document.getElementById(this.props.code.hashCode()).removeChild(textArea);
 	}
 
 
@@ -78,7 +97,10 @@ class CodeView extends Component {
 
 		return (
 			// Render a code mirror with an utility bar and style it according to Vipps style.
-			<div className="small-font-size">
+			// We give the first div an id of an unique hash corresponding to the code so when
+			// we want to copy something out of it, the page won't scroll as we aren't adding
+			// a textarea to the body, but this component.
+			<div className="small-font-size" id={this.props.code.hashCode()}> 
 				<div className="codeview-utility-bar">
 					<div className="codeview-utility-bar-left">
 						{items}
