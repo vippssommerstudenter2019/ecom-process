@@ -1,7 +1,7 @@
 import React from 'react';
 import Content from "./components/Content"
 import { StickyContainer } from 'react-sticky';
-import './App.css';
+import './styles/App.css';
 import { Sections, Intro } from "./Model";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
