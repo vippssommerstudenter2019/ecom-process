@@ -12,14 +12,31 @@ class Content extends React.Component {
 
     constructor(props) {
         super(props);
-        
+        let languages = ["python", "shell", "http", "javascript", "ruby", "java", "go"];
         this.state = {
-            activeLanguage: this.props.activeLanguage,
+            activeLanguage: languages[0],
+			languages: languages,
             swaggerResponse: {},
             sections: this.props.sections,
         };
-
+		
+		this.languageCallback = this.languageCallback.bind(this)
     }
+	
+	languageCallback(language) {
+		//console.log("LangLog:1 ", language);
+		if (language === this.props.activeLanguage) return;
+		const languages = this.state.languages.slice();
+		//console.log("LangLog:2 ", language);
+		for (let i in languages) {
+			//console.log(languages[i], language)
+			if (language === languages[i]) {
+				//console.log("LangLog:3 ", language);
+				this.setState({activeLanguage: language});
+				break;
+			}
+		}
+	}
 
     componentDidMount() {
         this.fetchData();
@@ -44,8 +61,11 @@ class Content extends React.Component {
     }
 
     contentFromSection(section, i) {
-        const language = this.state.activeLanguage;
-        const swagger = this.state.swaggerResponse;
+        const language  = this.state.activeLanguage;
+		const languages = this.state.languages.slice();
+		const langcall  = this.languageCallback;
+        const swagger   = this.state.swaggerResponse;
+		//console.log("Content", langcall);
 
         const id = section.id;
         const title = section.title;
@@ -62,7 +82,9 @@ class Content extends React.Component {
 					scrollId={id} 
 					title={title} 
 					description={description} 
-					language={language} 
+					language={language}
+					languages={languages}
+					langcall={langcall}
 					code={code} 
 					imagelink={imagelink}
                     position={position}

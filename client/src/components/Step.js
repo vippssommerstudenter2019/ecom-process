@@ -120,8 +120,9 @@ class Step extends Component {
 class CodeStep extends Component {
 
 	render() {
-		const imgflt = "code-img-" + ((this.props.position === 'left') ? "right" : "left");
-
+		const imgflt = "code-img-" + ((this.props.position === 'left')? "right" : "left");
+		const langcall = this.props.langcall;
+    
 		return (
 			<div className="code-wrapper" id={this.props.scrollId}>
 
@@ -139,7 +140,12 @@ class CodeStep extends Component {
 				</div>
 
 				<div className="code-code" >
-					<CodeView language={this.props.language} code={this.props.code} />
+					<CodeView 
+						languages={this.props.languages}
+						language={this.props.language} 
+						langcall={langcall}
+						code={this.props.code} 
+					/>
 				</div>
 
 				<div className={imgflt}>

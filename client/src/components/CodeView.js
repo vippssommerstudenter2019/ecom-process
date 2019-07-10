@@ -4,11 +4,23 @@ import "../App.css";
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/clike/clike';
+import 'codemirror/mode/go/go';
+import 'codemirror/mode/http/http';
+import 'codemirror/mode/shell/shell';
+import 'codemirror/mode/ruby/ruby';
+//import 'codemirror/mode/-lang-/-lang-'; To support other languages!!
+import DropDownPicker from './DropDownPicker.js';
 
 const propTypes = {
 	language: PropTypes.string.isRequired,
 	code: PropTypes.string.isRequired
 };
+
+const langmap = {
+	"java"	: "text/x-java",
+	"go"	: "text/x-go",
+}
 
 class CodeView extends Component {
 	constructor(props) {
@@ -39,20 +51,37 @@ class CodeView extends Component {
 		document.body.removeChild(textArea);
 	}
 
-	render() {
-		const options = {
-			mode: this.props.language,
-			theme: 'vipps',
-			lineNumbers: true,
-			lineWrapping: true,
-		};
-		const onChange = (editor, data, value) => { editor.SetState({ value: value }); };
-
+	
+  render() {
+	const language  = this.props.language;
+	const languages = this.props.languages;
+	const langcall  = this.props.langcall;
+	//console.log("CodeView", langcall);
+	
+	let items = [];
+	Array.from(languages, (val, i) => {
+		if (val === language) items.push(<button className="selected"> {val} </button>);
+		else items.push(<button onClick={()=>langcall(val)}> {val} </button>);
+		return val;
+	});
+	
+	const code = this.props.code;
+	const options = {
+		mode: langmap[language] || language,
+		theme: 'vipps',
+		lineNumbers: true,
+		lineWrapping: true,
+	};
+	const onChange = (editor, data, value) => {console.log(editor.options.mode);};
+		//<DropDownPicker choices={languages} selected={language} callback={langcall} />
 		return (
 
 			// Use the default Vipps card and enrich it with the syntax highlighted code for the current language
 			<div className="small-font-size">
 				<div className="code-top">
+					<div className="code-top-left">
+						{items}
+					</div>	
 					<div className="code-top-right">
 						<button className="codeview-button" onClick={this.handleCopyClick}>Copy</button>
 					</div>
