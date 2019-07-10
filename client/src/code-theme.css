@@ -1,38 +1,32 @@
 @import url("vipps-styles.css");
 
-@import url("../node_modules/codemirror/lib/codemirror.css");
-
 :root {
  --debug: #FF00FF;
  --vippsblack: #161225;
- --vippsgray: #6f6f6f;
  --vippsblue: #59cbe8;
  --vippspurple: #5E3DC2;
  --vippsred: #EB5858;
  --vippsrust: #9B3716;
- --vippsorange: #F00F0F;
 }
 
-.cm-s-vipps span				{ color: var(--vippsblack);		}
-.cm-s-vipps span.cm-keyword		{ color: var(--vippsblue); 		line-height: 1em; font-weight: bold;  }
-.cm-s-vipps span.cm-atom		{ color: var(--vippspurple);	}
-.cm-s-vipps span.cm-number		{ color: rgb(145, 207, 0);		}
-.cm-s-vipps span.cm-def			{ text-decoration: underline;	}
-.cm-s-vipps span.cm-variable	{ color: var(--vippsblack);		}
-.cm-s-vipps span.cm-variable-2	{ color: var(--vippsblack);		}
-.cm-s-vipps span.cm-variable-3	{ color: var(--vippsblack);		}
-.cm-s-vipps span.cm-type		{ color: var(--vippsblack);		}
-.cm-s-vipps span.cm-property	{ color: var(--vippspurple);	}
-.cm-s-vipps span.cm-operator	{ color: var(--vippsblack);		}
-.cm-s-vipps span.cm-comment		{ color: var(--vippsrust); 		font-style: italic; }
-.cm-s-vipps span.cm-string		{ color: var(--vippsred);		}
-.cm-s-vipps span.cm-meta		{ color: var(--debug);			}
-.cm-s-vipps span.cm-qualifier	{ color: var(--debug);			}
-.cm-s-vipps span.cm-builtin		{ color: var(--vippspurple);	}
-.cm-s-vipps span.cm-bracket		{ color: var(--vippsblack); 	background-color: var(--debug);}
-.cm-s-vipps span.cm-tag			{ color: var(--vippspurple);	}
-.cm-s-vipps span.cm-attribute	{ color: var(--vippsblue);		}
-.cm-s-vipps span.cm-error		{ color: var(--debug);			}
+.cm-s-vipps span.cm-keyword { line-height: 1em; font-weight: bold; color: var(--vippsblue); }
+.cm-s-vipps span.cm-atom { color: var(--debug); }
+.cm-s-vipps span.cm-number { color: rgb(145, 207, 0); }
+.cm-s-vipps span.cm-def { text-decoration: underline; }
+.cm-s-vipps span.cm-variable { color: var(--vippsblack); }
+.cm-s-vipps span.cm-variable-2 { color: var(--vippsblack); }
+.cm-s-vipps span.cm-variable-3, .cm-s-vipps span.cm-type { color: var(--vippsblack); }
+.cm-s-vipps span.cm-property { color: var(--vippsblack); }
+.cm-s-vipps span.cm-operator { color: var(--vippsblack); }
+.cm-s-vipps span.cm-comment { color: var(--vippsrust); font-style: italic; }
+.cm-s-vipps span.cm-string { color:var(--vippsred); }
+.cm-s-vipps span.cm-meta { color: var(--debug); }
+.cm-s-vipps span.cm-qualifier { color: var(--debug); }
+.cm-s-vipps span.cm-builtin { color: var(--vippspurple); }
+.cm-s-vipps span.cm-bracket { color: var(--vippsblack); }
+.cm-s-vipps span.cm-tag { color: var(--debug); }
+.cm-s-vipps span.cm-attribute { color: var(--debug); }
+.cm-s-vipps span.cm-error { color: var(--debug); }
 
 .cm-s-vipps .CodeMirror-activeline-background { background: rbg(252, 251, 254); }
 .cm-s-vipps .CodeMirror-matchingbracket { outline:1px solid grey; color: var(--vippsrust) !important;background: #FFFFFF; }
@@ -42,40 +36,33 @@
 }
 
 .code-top {
-	background-color: rgb(241, 239, 243);
-	border-radius: 25px 25px 0px 0px;
-	border: 2px solid rgb(219, 218, 223);
-	height: 50px;
-	width: 100%;
-	padding: 5px;
+	background-color: #F6F6F9; 
+  border-radius: 5px 5px 0px 0px;
+  height: 85px;
+  width: 100%;
 }
 
 .code-top-right {
-  padding-right: 5px;
-  padding-top: 5px;
+  padding-right: 30px;
+  padding-top: 25px;
   text-align: right;
 }
 
+.codeview-button {
+  font-weight: Vipps;
+  font-weight: lighter;
+	background-color:#EFEEF3;
+	color: #706B8B;
+	border: 0.8px solid #C9C6D7;
+	font-size: 13px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 40px;
+	padding: 4px 14px 4px 14px;
+}
+
 .code-top-left {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: space-between;
-  float: left;
-  width: auto;
-  height: 100%;
-  padding: 5px;
-}
-
-.code-top-left button {
-	margin-left: 5px;
-	margin-right: 5px;
-	font-weight: normal;
-	color: var(--vippsgray);
-}
-
-.code-top-left button.selected {
-	font-weight: bold;
-	color: var(--vippsblack);
+  float: left; 
 }
 
 .overlay-container {
@@ -116,11 +103,16 @@ Used for overlay over the code view when copied. Will be implemented when we get
   text-align: center;
 }
 */
+
+.react-codemirror2 {
+  padding-bottom: 25px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #F6F6F9; 
+}
+
 .cm-s-vipps.CodeMirror {
-  background-color: rgb(252, 251, 254);
-  color: rgba(233, 237, 237, 1);
-  border-radius: 0px 0px 25px 25px;
-  padding: 0px;
+  background-color: #F6F6F9;
+  border-radius: 0px 0px 5px 5px;
   border: none;
   height: auto;
   overflow: hidden;
@@ -129,17 +121,27 @@ Used for overlay over the code view when copied. Will be implemented when we get
   direction: ltr;
   width: 100%;
 }
+
 .cm-s-vipps.CodeMirror-scroll {
 	height: auto;
 }
 
-.cm-s-vipps .CodeMirror-gutters {
-  background: rgb(239, 238, 243);
-  color: rgb(83,127,126);
-  padding: 5px;
+.CodeMirror-lines {
+  color: var(--vippsblack);
 }
 
-.cm-s-vipps .CodeMirror-matchingbracket {
-  text-decoration: underline;
-  color: var(--vippsorange) !important;
+.CodeMirror pre {
+  padding-left: 44px;
+}
+
+.CodeMirror-linenumber {
+  padding-left: 25px;
+}
+
+.cm-s-vipps .CodeMirror-gutters {
+  background: #F6F6F9;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right-color: #00000000; 
+  border-bottom-color: #00000000; 
 }

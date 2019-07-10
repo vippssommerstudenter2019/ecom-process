@@ -83,7 +83,7 @@ class CodeView extends Component {
 						{items}
 					</div>	
 					<div className="code-top-right">
-						<button className="button tiny hollow" onClick={this.handleCopyClick}>Copy</button>
+						<button className="codeview-button" onClick={this.handleCopyClick}>Copy</button>
 					</div>
 				</div>
 					<CodeMirror
