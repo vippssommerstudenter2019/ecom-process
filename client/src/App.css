@@ -151,15 +151,14 @@
 .dropdown {
 	display: inline-block;
 	position: relative;
-	width: auto;
-	min-width: 120px;
+	width: 100%;
 	z-index: 10;
 }
 
 .dropdown-content {
 	display: none;
 	position: absolute;
-	width: 100%
+	width: 100%;
 }
 
 .dropdown:hover .dropdown-content {

@@ -31,9 +31,7 @@ class DropDownPicker extends Component {
 			<div className="dropdown-wrapper">
 				<div className="dropdown">
 					<div className="dropdown-border top">
-						<button className={"dropdown-icon " + butt_str}>
-							{selected}
-						</button>
+						<button className={"dropdown-icon " + butt_str}>{selected}</button>
 					</div>
 					
 					<div className="dropdown-content">

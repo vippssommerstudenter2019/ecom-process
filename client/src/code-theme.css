@@ -42,6 +42,10 @@
 	padding: 5px;
 }
 
+.CodeTop .dropdown {
+	width: 130px;
+}
+
 .cm-s-vipps.CodeMirror {
   background-color: rgb(252, 251, 254);
   color: rgba(233, 237, 237, 1);
